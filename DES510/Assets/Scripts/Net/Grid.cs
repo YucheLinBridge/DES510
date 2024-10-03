@@ -1,123 +1,142 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-[System.Serializable]
-public class Grid
-{
-    [SerializeField]private List<Port> ports;
-    public int PORTSCOUNT=>ports.Count;
-    public Port GetPort(int index)
+namespace Net {
+    [System.Serializable]
+    public class Grid
     {
-        int realport = _direction + (int)ports[index];
-        return (Port)realport;
-    }
+        [SerializeField] private List<Port> ports;
+        [SerializeField]private Kind kind;
 
-    private Kind kind;
-    private int _direction;
-    private int direction {
-        get => _direction;
-        set {
-            if (value>0) {
-                _direction = value % 4;
-            }
-            else
-            {
-                _direction = value % 4+4;
-            }
-        } 
-    }
-    public int DIR => direction;
+        [HideInInspector]public UnityEvent<bool> OnActivated=new UnityEvent<bool>();
 
-
-    private bool active;
-    public bool ACTIVE=>active;
-
-    public Grid(Kind kind, List<Port> ports)
-    {
-        this.kind = kind;
-        this.ports = ports;
-        this.direction = 0;
-    }
-
-    public bool IsNod() {
-        return kind==Kind.Nod;
-    }
-
-    public bool IsMain()
-    {
-        return kind==Kind.Main;
-    }
-
-    public bool HasPort(Port port)
-    {
-        int index = ports.FindIndex(x=> {
-            int realport = _direction + (int)x; 
-            return realport==(int)port;
-        });
-        return index>-1;
-    }
-
-    public void Rotate_clockwise()
-    {
-        direction++;
-    }
-
-    public void Rotate_anticlockwise()
-    {
-        direction--;
-    }
-
-    public void SetDirection(float degree)
-    {
-        direction = Mathf.RoundToInt(degree/90);
-    }
-
-    public void Activate(bool flag)
-    {
-        active = flag;
-    }
-
-    public string toString()
-    {
-        string str = "";
-        for (int i=0;i<PORTSCOUNT;i++)
+        public int PORTSCOUNT => ports.Count;
+        public Port GetPort(int index)
         {
-            switch (GetPort(i))
+            int realport = (_direction + (int)ports[index])%4;
+            return (Port)realport;
+        }
+
+        
+        private int _direction;
+        private int direction
+        {
+            get => _direction;
+            set
             {
-                case Port.N:
-                    str += "N";
-                    break;
-                case Port.E:
-                    str += "E";
-                    break;
-                case Port.S:
-                    str += "S";
-                    break;
-                case Port.W:
-                    str += "W";
-                    break;
-                default:
-                    break;
+                if (value >= 0)
+                {
+                    _direction = value % 4;
+                }
+                else
+                {
+                    _direction = value % 4 + 4;
+                }
             }
         }
-        return str;
+        public int DIR => direction;
+
+
+        private bool active;
+        public bool ACTIVE => active;
+
+        public Grid(Kind kind, List<Port> ports)
+        {
+            this.kind = kind;
+            this.ports = ports;
+            this.direction = 0;
+        }
+
+        public bool IsNod()
+        {
+            return kind == Kind.Nod;
+        }
+
+        public bool IsMain()
+        {
+            return kind == Kind.Main;
+        }
+
+        public bool IsHollow()
+        {
+            return kind == Kind.Hollow;
+        }
+
+        public bool HasPort(Port port)
+        {
+            int index = ports.FindIndex(x => {
+                int realport = (_direction + (int)x)%4;
+                return realport == (int)port;
+            });
+            return index > -1;
+        }
+
+        public void Rotate_clockwise()
+        {
+            direction++;
+        }
+
+        public void Rotate_anticlockwise()
+        {
+            direction--;
+        }
+
+        public void SetDirection(float degree)
+        {
+            direction = Mathf.RoundToInt(degree / 90);
+        }
+
+        public void Activate(bool flag)
+        {
+            active = flag;
+            OnActivated?.Invoke(flag);
+        }
+
+        public string toString()
+        {
+            if (IsHollow())
+            {
+                return "X";
+            }
+
+            string str = "";
+            for (int i = 0; i < PORTSCOUNT; i++)
+            {
+                str += ports[i].ToString();
+            }
+
+            str += direction;
+            return str;
+        }
+
+        public void Clone(out Grid clone)
+        {
+            List<Port>ports = new List<Port>();
+            ports.AddRange(this.ports);
+            clone = new Grid(kind,ports);
+        }
+
+
+        public enum Kind
+        {
+            Line,
+            Main,
+            Nod,
+            Hollow
+        }
+
+        public enum Port
+        {
+            N = 0,
+            E = 1,
+            S = 2,
+            W = 3,
+            All = 4
+        }
+
+
     }
-
-
-    public enum Kind {
-        Main,
-        Nod,
-        Line
-    }
-
-    public enum Port {
-        N=1, 
-        E =2,
-        S =3,
-        W=4,
-        All=0
-    }
-
-
 }
+
