@@ -17,13 +17,13 @@ public class PointOnMap : MonoBehaviour, IPointerUpHandler
         //Debug.Log("Clicked");
         Ray ray = Camera.main.ScreenPointToRay(eventData.position);
         if (Physics.Linecast(ray.origin, ray.origin+ ray.direction*1000, out var hitinfo, LayerMask)){
-            Debug.Log($"click at {hitinfo.collider.name}");
+            //Debug.Log($"click at {hitinfo.collider.name}");
             onPointOnMap?.Invoke(hitinfo.point);
         }
 
         //rays.Add(ray);
         //Debug.DrawLine(ray.origin, ray.direction);
-        Debug.Log($"ray origin: {ray.origin}\ndirection:{ray.direction}");
+        //Debug.Log($"ray origin: {ray.origin}\ndirection:{ray.direction}");
         //Debug.LogError($"Clicked at {eventData.position}");
     }
 

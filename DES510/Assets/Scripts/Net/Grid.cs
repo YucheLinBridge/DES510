@@ -49,9 +49,9 @@ namespace Net {
             this.direction = 0;
         }
 
-        public bool IsNod()
+        public bool IsNode()
         {
-            return kind == Kind.Nod;
+            return kind == Kind.Node;
         }
 
         public bool IsMain()
@@ -123,7 +123,7 @@ namespace Net {
         {
             Line,
             Main,
-            Nod,
+            Node,
             Hollow
         }
 
