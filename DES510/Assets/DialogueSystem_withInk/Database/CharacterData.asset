@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b19a986de6dfc04f8228e1b764edfca, type: 3}
+  m_Name: CharacterData
+  m_EditorClassIdentifier: 
+  characters:
+  - Name: Test_1
+    SpeakerPrefab: {fileID: 385380743978627640, guid: 76d5f20bb472dfe40832ff3fa0885221,
+      type: 3}
+  - Name: Test_2
+    SpeakerPrefab: {fileID: 385380743978627640, guid: 0b7b0af82c86d6d4f8338fe62a9f666d,
+      type: 3}

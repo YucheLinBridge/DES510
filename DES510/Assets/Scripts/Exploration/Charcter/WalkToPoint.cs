@@ -1,15 +1,53 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class WalkToPoint : MonoBehaviour
 {
-    [SerializeField]private NavMeshAgent agent;
+    [SerializeField]protected NavMeshAgent agent;
+    
+    [HideInInspector]public UnityEvent OnArrived = new UnityEvent();
+    private bool moving;
+    private Vector3 des;
+    private bool enable=true;
 
    public void Walk(Vector3 des)
    {
+        if (!enable)
+        {
+            return;
+        }
+        OnArrived.RemoveAllListeners();
         agent.SetDestination(des);
-        Debug.Log($"{name} walk to {des}");
+        this.des=des;
+        this.des.y = transform.position.y;
+        //Debug.Log($"{name} walk to {des}");
+        moving = true;
    }
+
+    private void Update()
+    {
+        if (moving) {
+            if ((des-transform.position).sqrMagnitude<=.25f)
+            {
+                //Debug.Log("Arrived");
+                moving = false;
+                OnArrived?.Invoke();
+                OnArrived.RemoveAllListeners();
+            }
+        }
+    }
+
+    public void AddEventOnArrive(Action action)
+    {
+        OnArrived.AddListener(() => {
+            action?.Invoke();
+        });
+    }
+
+    public void SetEnable(bool flag) {
+        enable = flag;
+    }
+
 }

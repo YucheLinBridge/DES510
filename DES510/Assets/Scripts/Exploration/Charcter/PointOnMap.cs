@@ -10,15 +10,29 @@ public class PointOnMap : MonoBehaviour, IPointerUpHandler
 
     public UnityEvent<Vector3> onPointOnMap;
 
-    private List<Ray> rays = new List<Ray>(); 
+    private List<Ray> rays = new List<Ray>();
+
+    private const string PLAYER_LAYER = "Player";
+    private const string CHARACTER_LAYER = "Character";
+    private const string GROUND_LAYER = "Ground";
 
     public void OnPointerUp(PointerEventData eventData)
     {
         //Debug.Log("Clicked");
         Ray ray = Camera.main.ScreenPointToRay(eventData.position);
         if (Physics.Linecast(ray.origin, ray.origin+ ray.direction*1000, out var hitinfo, LayerMask)){
-            //Debug.Log($"click at {hitinfo.collider.name}");
             onPointOnMap?.Invoke(hitinfo.point);
+            if (hitinfo.collider.gameObject.layer==LayerMask.NameToLayer(GROUND_LAYER))
+            {
+                
+            }else if (hitinfo.collider.gameObject.layer == LayerMask.NameToLayer(CHARACTER_LAYER))
+            {
+                hitinfo.collider.GetComponent<Interaction>().OnClicked();
+            }
+            else
+            {
+                Debug.Log("Wrong layer");
+            }
         }
 
         //rays.Add(ray);
