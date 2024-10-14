@@ -9,7 +9,7 @@ public class DialogueMgr:MonoBehaviour
     [SerializeField] private GameObject dialogueObj,dialogueOption;
     [SerializeField] private CharactersData charactersData;
     [SerializeField] private TextAsset test;
-
+    [SerializeField] private OptionStyle optionStyle;
 
     public UnityEvent OnDialogueStart=new UnityEvent(), OnDialogueEnd=new UnityEvent();
 
@@ -88,10 +88,31 @@ public class DialogueMgr:MonoBehaviour
         {
             for (int i = 0; i < story.currentChoices.Count; i++)
             {
-                Choice choice = story.currentChoices[i]; 
-                createChoiceView(choice.text.Trim(),() => {
-                    onClickChoiceButton(choice);
-                });
+                Choice choice = story.currentChoices[i];
+
+                switch (optionStyle)
+                {
+                    case OptionStyle.None:
+                        createOptionView(choice.text.Trim(), () => {
+                            onClickChoiceButton(choice);
+                        });
+                        break;
+                    case OptionStyle.Number:
+                        createOptionView($"{i+1}.{choice.text.Trim()}", () => {
+                            onClickChoiceButton(choice);
+                        });
+
+                        break;
+                    case OptionStyle.Arrow:
+                        createOptionView($"-> {choice.text.Trim()}", () => {
+                            onClickChoiceButton(choice);
+                        });
+                        break;
+                    default:
+                        break;
+                }
+
+                
             }
         }
         // If we've read all the content and there's no choices, the story is finished!
@@ -210,7 +231,7 @@ public class DialogueMgr:MonoBehaviour
         refreshView();
     }
 
-    private DialogueOption createChoiceView(string text,UnityAction clickevent)
+    private DialogueOption createOptionView(string text,UnityAction clickevent)
     {
         optionsParent.gameObject.SetActive(true);
         var go = Instantiate(dialogueOption, optionsParent);
@@ -235,5 +256,11 @@ public class DialogueMgr:MonoBehaviour
     {
         auto = !auto;
         dialogueObj_ins.SetAuto(auto);
+    }
+
+    public enum OptionStyle {
+        None,
+        Number,
+        Arrow
     }
 }

@@ -23,8 +23,10 @@ public class Grids2DMgr : IInitializable
     {
         var tmp = data.GetTest().Format();
         map = new Map(tmp);
+    }
 
-        //Debug.Log($"Map height={tmp.Length}");
+    public void ShowGame()
+    {
         for (int i = 0; i < map.HEIGHT; i++)//y
         {
             for (int j = 0; j < map.WIDTH(i); j++)//x
