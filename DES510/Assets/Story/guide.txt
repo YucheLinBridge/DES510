@@ -1,0 +1,4 @@
+-1 = left
+1 = right
+#speaker = character
+#portrait = if animation/different faces, which one
