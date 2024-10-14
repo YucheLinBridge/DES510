@@ -11,9 +11,10 @@ public class TrainTravelMgr : MonoBehaviour
 
     [Header("Rail")]
     [SerializeField] private Transform trackParent;
-    [SerializeField] private float spacing = 13.5f;
+    [SerializeField] private float spacing = 13.5f,start_pending,end_pending;
     [SerializeField] private GameObject trackPrefab;
     [SerializeField] private TrackDirection track_direction;
+
 
     private float time;
     private float t;
@@ -35,6 +36,7 @@ public class TrainTravelMgr : MonoBehaviour
     {
         if (moving)
         {
+
             t += Time.deltaTime;
             train.position = Vector3.Lerp(start.position,end.position,t/time);
             if (t>=time)
@@ -46,7 +48,7 @@ public class TrainTravelMgr : MonoBehaviour
 
     private void createTracks()
     {
-        float trackLength = 0;
+        float trackLength = -start_pending;
         Vector3 dir= end.position - start.position;
         float distance = dir.magnitude;
         //Debug.Log($"start={start.position}\nend={end.position}");
@@ -54,7 +56,7 @@ public class TrainTravelMgr : MonoBehaviour
         {
             trackLength += Mathf.Abs(spacing);
             var go=Instantiate(trackPrefab,trackParent);
-            go.transform.position = Vector3.Lerp(start.position, end.position, trackLength / distance);
+            go.transform.position = Vector3.LerpUnclamped(start.position, end.position, trackLength / distance);
             switch (track_direction)
             {
                 case TrackDirection.Right:
@@ -71,7 +73,7 @@ public class TrainTravelMgr : MonoBehaviour
                     break;
             }
 
-            if (trackLength>=distance)
+            if (trackLength>=distance+end_pending)
             {
                 break;
             }

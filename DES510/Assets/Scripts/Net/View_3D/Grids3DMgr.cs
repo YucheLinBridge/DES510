@@ -19,7 +19,7 @@ public class Grids3DMgr : IInitializable
 
     public void Initialize()
     {
-        var tmp = data.Format();
+        var tmp = data.GetTest().Format();
         map = new Map(tmp);
 
         //Debug.Log($"Map height={tmp.Length}");

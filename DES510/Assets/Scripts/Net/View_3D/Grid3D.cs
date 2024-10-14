@@ -16,11 +16,12 @@ public class Grid3D : MonoBehaviour
 
     private int index = 0;
     private bool locked = false;
+    private bool cannotRotate = false;
 
 
     private void OnMouseDown()
     {
-        if (locked)
+        if (locked || cannotRotate)
         {
             return;
         }
@@ -40,6 +41,8 @@ public class Grid3D : MonoBehaviour
         {
             addPort(grid.GetPort(i));
         }
+
+        cannotRotate = grid.CANNOTROT;
     }
     private void resetAllLine()
     {

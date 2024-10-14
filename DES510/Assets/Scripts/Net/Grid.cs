@@ -7,12 +7,16 @@ namespace Net {
     [System.Serializable]
     public class Grid
     {
-        [SerializeField] private List<Port> ports;
+        [SerializeField] private bool cannotRotate;
+        public List<Port> ports;
         [SerializeField]private Kind kind;
 
         [HideInInspector]public UnityEvent<bool> OnActivated=new UnityEvent<bool>();
 
         public int PORTSCOUNT => ports.Count;
+        public bool CANNOTROT=>cannotRotate;
+        public Kind KIND=>kind;
+
         public Port GetPort(int index)
         {
             int realport = (_direction + (int)ports[index])%4;
@@ -42,11 +46,12 @@ namespace Net {
         private bool active;
         public bool ACTIVE => active;
 
-        public Grid(Kind kind, List<Port> ports)
+        public Grid(Kind kind, List<Port> ports,bool cannotRot)
         {
             this.kind = kind;
             this.ports = ports;
             this.direction = 0;
+            this.cannotRotate = cannotRot;
         }
 
         public bool IsNode()
@@ -102,12 +107,27 @@ namespace Net {
             }
 
             string str = "";
-            for (int i = 0; i < PORTSCOUNT; i++)
+
+            if (HasPort(Port.N))
             {
-                str += ports[i].ToString();
+                str += "N";
             }
 
-            str += direction;
+            if (HasPort(Port.S)) {
+                str+= "S";
+            }
+
+            if (HasPort(Port.E))
+            {
+                str+= "E";
+            }
+
+            if (HasPort(Port.W))
+            {
+                str += "W";
+            }
+
+
             return str;
         }
 
@@ -115,7 +135,7 @@ namespace Net {
         {
             List<Port>ports = new List<Port>();
             ports.AddRange(this.ports);
-            clone = new Grid(kind,ports);
+            clone = new Grid(kind,ports,cannotRotate);
         }
 
 
