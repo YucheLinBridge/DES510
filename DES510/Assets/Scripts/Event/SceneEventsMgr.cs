@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using Zenject;
 
-public class SceneEventsMgr : DialogueEvent
+public class SceneEventsMgr : DialogueEventsMgr
 {
     [SerializeField] private List<PuzzleEvent> puzzleEndEvents;
 
@@ -46,19 +46,11 @@ public class SceneEventsMgr : DialogueEvent
         int value= rawdata.Item2;
     }
 
-    public void test()
-    {
-        Debug.Log("test");
-    }
-
-
-
-
-
     public void End()
     {
         gridsMgr.End();
     }
+
 
 }
 

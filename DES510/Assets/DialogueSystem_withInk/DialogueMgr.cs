@@ -171,17 +171,17 @@ public class DialogueMgr:MonoBehaviour
                     if (splitValue.Length==1)
                     {
                         onLineEnd?.AddListener(() => {
-                            DialogueEvent.Instance?.SendMessage(splitValue[0]);
+                            DialogueEventsMgr.Instance?.SendMessage(splitValue[0]);
                         });
                     }else if (splitValue.Length==2)
                     {
                         onLineEnd?.AddListener(() => {
-                            DialogueEvent.Instance?.SendMessage(splitValue[0], int.Parse(splitValue[1]));
+                            DialogueEventsMgr.Instance?.SendMessage(splitValue[0], int.Parse(splitValue[1]));
                         });
                     }else if (splitValue.Length == 3)
                     {
                         onLineEnd?.AddListener(() => {
-                            DialogueEvent.Instance?.SendMessage(splitValue[0], (int.Parse(splitValue[1]),int.Parse(splitValue[2])));
+                            DialogueEventsMgr.Instance?.SendMessage(splitValue[0], (int.Parse(splitValue[1]),int.Parse(splitValue[2])));
                         });
                     }
                     break;
