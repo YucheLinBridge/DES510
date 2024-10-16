@@ -28,6 +28,8 @@ public class DialogueMgr:MonoBehaviour
     private bool finished = false;
     private bool auto=false;
 
+    private UnityEvent onLineEnd=new UnityEvent();
+
     public static DialogueMgr Instance;
     private void Awake()
     {
@@ -58,6 +60,7 @@ public class DialogueMgr:MonoBehaviour
 
     public void ContinueDialogue()
     {
+        onLineEnd?.Invoke();
         refreshView();
     }
 
@@ -163,7 +166,25 @@ public class DialogueMgr:MonoBehaviour
                         layout = -1;
                     }
                     break;
-                case EVENT_TAG:break;
+                case EVENT_TAG:
+                    string[] splitValue=tagValue.Split(",");
+                    if (splitValue.Length==1)
+                    {
+                        onLineEnd?.AddListener(() => {
+                            DialogueEvent.Instance?.SendMessage(splitValue[0]);
+                        });
+                    }else if (splitValue.Length==2)
+                    {
+                        onLineEnd?.AddListener(() => {
+                            DialogueEvent.Instance?.SendMessage(splitValue[0], int.Parse(splitValue[1]));
+                        });
+                    }else if (splitValue.Length == 3)
+                    {
+                        onLineEnd?.AddListener(() => {
+                            DialogueEvent.Instance?.SendMessage(splitValue[0], (int.Parse(splitValue[1]),int.Parse(splitValue[2])));
+                        });
+                    }
+                    break;
                 case SPEED_TAG:
                     if (float.TryParse(tagValue,out float speed))
                     {
@@ -245,6 +266,7 @@ public class DialogueMgr:MonoBehaviour
      
     private void createContentView(string text)
     {
+        onLineEnd.RemoveAllListeners();
         var go = Instantiate(dialogueObj,dialogueParent);
         var obj=go.GetComponent<DialogueObj>();
         obj.Show(text,auto);

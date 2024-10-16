@@ -14,5 +14,5 @@ You can see the cowboy's heavy breathing through the mask, sighs of relief, it s
 ===Section2===
 
 *   'Need help with that?' #speaker: Vivian #layout:1
-    'That'd be tremendous! I can't figure this out for the life of me, have a look yourself.' #speaker: Mike #layout:-1
+    'That'd be tremendous! I can't figure this out for the life of me, have a look yourself.' #speaker: Mike #layout:-1 #event:generate_puzzle,0
 - -> END

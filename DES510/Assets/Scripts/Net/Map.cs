@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Net {
     public class Map
@@ -18,16 +19,45 @@ namespace Net {
 
         List<List<(int, int)>> linkedgrids = new List<List<(int, int)>>();
 
+        public UnityEvent<bool> StatusCheck=new UnityEvent<bool>();
+
+        private List<Grid> nodes=new List<Grid>();
 
         public Map(Grid[][] grids)
         {
             this.grids = grids;
-            //printGrids();
+            getAllNodes();
+        }
+
+        private void getAllNodes()
+        {
+            nodes.Clear();
+            for (int i=0;i<grids.Length;i++)
+            {
+                for (int j = 0; j < grids[i].Length;j++)
+                {
+                    if (grids[i][j].IsNode())
+                    {
+                        nodes.Add(grids[i][j]);
+                    }
+                }
+            }
+        }
+
+        private bool isWin()
+        {
+            foreach (var node in nodes)
+            {
+                if (!node.ACTIVE)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         public void Rotate_Clockwise(int x, int y)
         {
-            //Debug.Log($"Rotate at ({x},{y})");
             grids[y][x].Rotate_clockwise();
             Refresh();
         }
@@ -81,9 +111,8 @@ namespace Net {
                 }
             }
 
-            //printGrids();
-            //printLinkedGrids();
 
+            StatusCheck?.Invoke(isWin());
         }
 
 
@@ -186,6 +215,7 @@ namespace Net {
         {
             grids[y][x].Activate(flag);
         }
+
     }
 }
 

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 using Net;
+using UnityEngine.Events;
+using Coroutine_Zenject;
 
 public class GridsUIMgr : IInitializable
 {
@@ -20,19 +22,28 @@ public class GridsUIMgr : IInitializable
     [Inject(Id = "grid_parent")]
     private RectTransform grid_parent;
 
+    [Inject(Id = "grid_anim")]
+    private Animator animator;
+
     private Map map;
     private List<GridUI> grids;
 
+    public UnityEvent OnCompleted=new UnityEvent();
+    public UnityEvent OnEnd=new UnityEvent();
+
+    public System.Threading.CancellationTokenSource canceltokensource;
 
     public void Initialize()
     {
-        Generate(0);
+        
     }
 
     public void Generate(int index)
     {
+        OnEnd?.RemoveAllListeners();
         var tmp = data.GetMap(index).Format();
         map = new Map(tmp);
+        map.StatusCheck.AddListener(complete);
 
         if (grids==null) {
             grids=new List<GridUI>();
@@ -68,7 +79,7 @@ public class GridsUIMgr : IInitializable
         net_panel.gameObject.SetActive(true);
     }
 
-    public void Hide()
+    private void hide()
     {
         net_panel.gameObject.SetActive(false);
     }
@@ -84,11 +95,28 @@ public class GridsUIMgr : IInitializable
 
     private void clearOldGrids()
     {
-        for (int i= grids.Count; i>=0; i--)
+        for (int i= grids.Count-1; i>=0; i--)
         {
             grids[i].KillItself();
         }
         grids.Clear();
     }
 
+
+    private void complete(bool flag)
+    {
+        if (flag)
+        {
+            animator.SetTrigger("COMPLETED");
+            OnCompleted?.Invoke();
+        }
+    }
+
+    public void End() {
+        animator.SetTrigger("END");
+        Coroutine_Controller.WaitToDo(() => {
+            hide();
+            OnEnd?.Invoke();
+        },.5f);
+    }
 }
