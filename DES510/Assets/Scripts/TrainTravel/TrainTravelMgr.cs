@@ -11,7 +11,7 @@ public class TrainTravelMgr : MonoBehaviour
     [SerializeField] private float speed=10;
 
     [Header("Train")]
-    [SerializeField] private Animator animator;
+    [SerializeField] private List<Animator> animators;
     [SerializeField] private UnityEvent onStart;
 
 
@@ -27,7 +27,12 @@ public class TrainTravelMgr : MonoBehaviour
     private bool moving;
 
     public void StartMoving() {
-        animator.SetTrigger("MOVE");
+        foreach (var animator in animators)
+        {
+            animator.SetTrigger("MOVE");
+        }
+
+        
         onStart?.Invoke();
         time =(end.position-start.position).magnitude/speed;
         moving=true;
