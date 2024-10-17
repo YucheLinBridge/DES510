@@ -8,11 +8,15 @@ public class TrainTravelMgr : MonoBehaviour
     [SerializeField] private Transform start, end;
     [SerializeField] private Transform train;
     [Header("Setting")]
+    [SerializeField] private bool autoStart;
     [SerializeField] private float speed=10;
+    [Tooltip("looptimes=-1 means infinetly loop")]
+    [SerializeField] private int looptimes = 1;
 
     [Header("Train")]
     [SerializeField] private List<Animator> animators;
     [SerializeField] private UnityEvent onStart;
+    [SerializeField] private UnityEvent onStop;
 
 
     [Header("Rail")]
@@ -25,6 +29,7 @@ public class TrainTravelMgr : MonoBehaviour
     private float time;
     private float t;
     private bool moving;
+    private int times=0;
 
     public void StartMoving() {
         foreach (var animator in animators)
@@ -42,6 +47,11 @@ public class TrainTravelMgr : MonoBehaviour
     private void Start()
     {
         createTracks();
+
+        if (autoStart)
+        {
+            StartMoving();
+        }
     }
 
     private void Update()
@@ -53,7 +63,16 @@ public class TrainTravelMgr : MonoBehaviour
             train.position = Vector3.Lerp(start.position,end.position,t/time);
             if (t>=time)
             {
+                times++;
                 t = 0;
+                if (looptimes==-1)
+                {
+
+                }else if (times>=looptimes)
+                {
+                    moving = false;
+                    onStop?.Invoke();
+                }
             }
         }
     }
