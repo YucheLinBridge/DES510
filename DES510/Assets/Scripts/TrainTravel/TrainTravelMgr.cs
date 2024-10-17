@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TrainTravelMgr : MonoBehaviour
 {
@@ -8,6 +9,11 @@ public class TrainTravelMgr : MonoBehaviour
     [SerializeField] private Transform train;
     [Header("Setting")]
     [SerializeField] private float speed=10;
+
+    [Header("Train")]
+    [SerializeField] private Animator animator;
+    [SerializeField] private UnityEvent onStart;
+
 
     [Header("Rail")]
     [SerializeField] private Transform trackParent;
@@ -21,7 +27,9 @@ public class TrainTravelMgr : MonoBehaviour
     private bool moving;
 
     public void StartMoving() {
-        time=(end.position-start.position).magnitude/speed;
+        animator.SetTrigger("MOVE");
+        onStart?.Invoke();
+        time =(end.position-start.position).magnitude/speed;
         moving=true;
         //Debug.Log($"start={start.position}\nend={end.position}");
     }
@@ -29,7 +37,6 @@ public class TrainTravelMgr : MonoBehaviour
     private void Start()
     {
         createTracks();
-        StartMoving();
     }
 
     private void Update()
