@@ -92,7 +92,7 @@ public class DialogueObj : MonoBehaviour
     {
         var go = Instantiate(character.SpeakerPrefab, speakerParent);
         speaker = go.GetComponent<DialogueSpeaker>();
-        speaker.SetName(character.Name);
+        speaker.SetName(character.Name_Shown);
     }
 
     public void SetSpeakerLayout(int layout)

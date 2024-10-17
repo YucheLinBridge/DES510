@@ -17,5 +17,6 @@ public class CharactersData : ScriptableObject
 [System.Serializable]
 public class Character {
     public string Name;
+    public string Name_Shown;
     public GameObject SpeakerPrefab;
 }

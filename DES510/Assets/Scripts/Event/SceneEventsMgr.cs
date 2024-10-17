@@ -1,4 +1,5 @@
 using Codice.Client.Common.GameUI;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,8 @@ public class SceneEventsMgr : DialogueEventsMgr
 
     [Inject(Optional = true)]
     private GridsUIMgr gridsMgr;
+
+    private float timewait = 0;
 
 
     private void Awake()
@@ -29,16 +32,42 @@ public class SceneEventsMgr : DialogueEventsMgr
         if (puzzle_i!=-1)
         {
             gridsMgr.OnCompleted.AddListener(() => {
-                puzzleEndEvents[puzzle_i].OnComplete?.Invoke();
+                StartCoroutine(excecuteEvents_completed(puzzle_i));
             });
 
             gridsMgr.OnEnd.AddListener(() => {
-                puzzleEndEvents[puzzle_i].OnEnd?.Invoke();
+                StartCoroutine(excecuteEvents_end(puzzle_i));
             });
         }
 
         gridsMgr.ShowGame();
     }
+
+    IEnumerator excecuteEvents_completed(int index) {
+        for (int i=0;i< puzzleEndEvents[index].OnComplete.Count;i++)
+        {
+            puzzleEndEvents[index].OnComplete[i].Invoke();
+            if (timewait>0)
+            {
+                yield return new WaitForSeconds(timewait);
+            }
+            
+            timewait = 0;
+        }
+    }
+
+    IEnumerator excecuteEvents_end(int index) {
+        for (int i = 0; i < puzzleEndEvents[index].OnEnd.Count; i++)
+        {
+            puzzleEndEvents[index].OnEnd[i].Invoke();
+            if (timewait > 0)
+            {
+                yield return new WaitForSeconds(timewait);
+            }
+            timewait = 0;
+        }
+    }
+
 
     private void addRelationshipLv((int,int)rawdata) //Because I need to call this method with SendMessage
     {
@@ -46,9 +75,16 @@ public class SceneEventsMgr : DialogueEventsMgr
         int value= rawdata.Item2;
     }
 
+
+
     public void End()
     {
         gridsMgr.End();
+    }
+
+    public void Wait(float time)
+    {
+        timewait = time;
     }
 
 
@@ -58,5 +94,5 @@ public class SceneEventsMgr : DialogueEventsMgr
 public class PuzzleEvent
 {
     public int index;
-    public UnityEvent OnComplete,OnEnd;
+    public List<UnityEvent> OnComplete,OnEnd;
 }
