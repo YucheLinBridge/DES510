@@ -21,12 +21,13 @@ public class Grids2DMgr : IInitializable
 
     public void Initialize()
     {
-        var tmp = data.GetTest().Format();
-        map = new Map(tmp);
+        
     }
 
-    public void ShowGame()
+    public void ShowGame(int index)
     {
+        var tmp = data.GetMap(index).Format();
+        map = new Map(tmp);
         for (int i = 0; i < map.HEIGHT; i++)//y
         {
             for (int j = 0; j < map.WIDTH(i); j++)//x
@@ -54,6 +55,11 @@ public class Grids2DMgr : IInitializable
     public void Rotate_anticlockwise(int x, int y)
     {
         map.Rotate_Anticlockwise(x, y);
+    }
+
+    private void clearOld()
+    {
+
     }
 
 }

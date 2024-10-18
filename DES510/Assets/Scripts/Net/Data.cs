@@ -58,5 +58,20 @@ namespace Net {
         }
 
     }
+
+
+    [System.Serializable]
+    public class ArtData {
+        [SerializeField] private string name;
+        [SerializeField] private Sprite sprite;
+        
+        public Sprite SPRITE=>sprite;
+
+        public bool IsName(string name)
+        {
+            return this.name.Equals(name);
+        }
+
+    }
 }
 

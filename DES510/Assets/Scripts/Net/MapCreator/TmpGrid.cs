@@ -26,6 +26,9 @@ public class TmpGrid:MonoBehaviour
     [SerializeField] private Color normalNode;
     [SerializeField] private Color bg_normal,bg_hollow;
 
+    [Inject]
+    private MapCreator creator;
+
     private bool dontResetLines = false;
 
     private Net.Grid.Kind kind;
@@ -127,6 +130,7 @@ public class TmpGrid:MonoBehaviour
                 enableAllToggle(true);
                 line.enabled = true;
                 node.enabled = true;
+                node.sprite= creator.MAIN;
                 node.color =main;
                 bg.color = bg_normal;
                 btnRotClockwise.interactable = true;
@@ -135,6 +139,7 @@ public class TmpGrid:MonoBehaviour
                 enableAllToggle(true);
                 line.enabled = true;
                 node.enabled = true;
+                node.sprite = creator.NODE;
                 node.color=normalNode;
                 bg.color = bg_normal;
                 btnRotClockwise.interactable = true;
@@ -218,7 +223,7 @@ public class TmpGrid:MonoBehaviour
         }
         else
         {
-            line.sprite = Resources.Load<Sprite>($"Line_{str}");
+            line.sprite = creator.GetLine(str);
             
         }
         

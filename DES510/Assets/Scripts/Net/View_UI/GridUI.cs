@@ -15,6 +15,9 @@ public class GridUI : MonoBehaviour
     [Inject]
     private GridsUIMgr mgr;
 
+    [Inject]
+    private GridUI_data database;
+
     private bool locked = false;
     private bool cannotRotate = false;
 
@@ -36,15 +39,22 @@ public class GridUI : MonoBehaviour
     public void SetGrid(Net.Grid grid)
     {
         //Debug.Log($"Line_{grid.toString()}");
-        line.sprite = Resources.Load<Sprite>($"Line_{grid.toString()}");// as Sprite;
-        if (!grid.IsNode() && !grid.IsMain())
+        line.sprite = database.GetLine(grid.toString());
+        //Resources.Load<Sprite>($"Line_{}");// as Sprite;
+        if (grid.IsNode())
         {
-            node.enabled = false;
+            node.enabled = true;
+            node.sprite = database.NODE;
+        }else if (grid.IsMain())
+        {
+            node.enabled = true;
+            node.sprite = database.MAIN;
         }
         else
         {
-            node.enabled = true;
+            node.enabled = false;
         }
+
         cannotRotate = grid.CANNOTROT;
     }
 

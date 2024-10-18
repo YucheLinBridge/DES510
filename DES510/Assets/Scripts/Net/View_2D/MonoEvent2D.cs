@@ -8,8 +8,8 @@ public class MonoEvent2D : MonoBehaviour
     [Inject]
     private Grids2DMgr Grids2DMgr;
 
-    public void ShowGame()
+    public void ShowGame(int index)
     {
-        Grids2DMgr.ShowGame();
+        Grids2DMgr.ShowGame(index);
     }
 }

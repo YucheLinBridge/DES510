@@ -12,4 +12,5 @@ public class MonoEventUI : MonoBehaviour
     {
         gridsUIMgr.ShowGame();
     }
+
 }

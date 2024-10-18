@@ -22,7 +22,7 @@ public class GridsUIMgr : IInitializable
     [Inject(Id = "grid_parent")]
     private RectTransform grid_parent;
 
-    [Inject(Id = "grid_anim")]
+    [Inject(Id = "grid_anim",Optional =true)]
     private Animator animator;
 
     private Map map;
@@ -107,13 +107,13 @@ public class GridsUIMgr : IInitializable
     {
         if (flag)
         {
-            animator.SetTrigger("COMPLETED");
+            animator?.SetTrigger("COMPLETED");
             OnCompleted?.Invoke();
         }
     }
 
     public void End() {
-        animator.SetTrigger("END");
+        animator?.SetTrigger("END");
         Coroutine_Controller.WaitToDo(() => {
             hide();
             OnEnd?.Invoke();

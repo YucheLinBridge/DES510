@@ -27,6 +27,12 @@ MonoBehaviour:
         OnActivated:
           m_PersistentCalls:
             m_Calls: []
+      - cannotRotate: 1
+        ports: 03000000
+        kind: 2
+        OnActivated:
+          m_PersistentCalls:
+            m_Calls: []
     - girds:
       - cannotRotate: 1
         ports: 0000000002000000
@@ -65,3 +71,118 @@ MonoBehaviour:
         OnActivated:
           m_PersistentCalls:
             m_Calls: []
+  - rows:
+    - girds:
+      - cannotRotate: 1
+        ports: 01000000
+        kind: 1
+        OnActivated:
+          m_PersistentCalls:
+            m_Calls: []
+      - cannotRotate: 0
+        ports: 0100000003000000
+        kind: 0
+        OnActivated:
+          m_PersistentCalls:
+            m_Calls: []
+      - cannotRotate: 0
+        ports: 0000000001000000
+        kind: 0
+        OnActivated:
+          m_PersistentCalls:
+            m_Calls: []
+    - girds:
+      - cannotRotate: 0
+        ports: 
+        kind: 3
+        OnActivated:
+          m_PersistentCalls:
+            m_Calls: []
+      - cannotRotate: 0
+        ports: 0000000001000000
+        kind: 3
+        OnActivated:
+          m_PersistentCalls:
+            m_Calls: []
+      - cannotRotate: 0
+        ports: 020000000100000003000000
+        kind: 0
+        OnActivated:
+          m_PersistentCalls:
+            m_Calls: []
+      - cannotRotate: 1
+        ports: 03000000
+        kind: 2
+        OnActivated:
+          m_PersistentCalls:
+            m_Calls: []
+    - girds:
+      - cannotRotate: 1
+        ports: 01000000
+        kind: 1
+        OnActivated:
+          m_PersistentCalls:
+            m_Calls: []
+      - cannotRotate: 0
+        ports: 0000000001000000
+        kind: 0
+        OnActivated:
+          m_PersistentCalls:
+            m_Calls: []
+      - cannotRotate: 0
+        ports: 0100000003000000
+        kind: 0
+        OnActivated:
+          m_PersistentCalls:
+            m_Calls: []
+    - girds:
+      - cannotRotate: 0
+        ports: 
+        kind: 3
+        OnActivated:
+          m_PersistentCalls:
+            m_Calls: []
+      - cannotRotate: 0
+        ports: 0100000003000000
+        kind: 0
+        OnActivated:
+          m_PersistentCalls:
+            m_Calls: []
+      - cannotRotate: 0
+        ports: 000000000200000003000000
+        kind: 0
+        OnActivated:
+          m_PersistentCalls:
+            m_Calls: []
+      - cannotRotate: 1
+        ports: 03000000
+        kind: 2
+        OnActivated:
+          m_PersistentCalls:
+            m_Calls: []
+    - girds:
+      - cannotRotate: 0
+        ports: 
+        kind: 3
+        OnActivated:
+          m_PersistentCalls:
+            m_Calls: []
+      - cannotRotate: 0
+        ports: 0200000003000000
+        kind: 0
+        OnActivated:
+          m_PersistentCalls:
+            m_Calls: []
+      - cannotRotate: 0
+        ports: 0000000002000000
+        kind: 0
+        OnActivated:
+          m_PersistentCalls:
+            m_Calls: []
+      - cannotRotate: 1
+        ports: 03000000
+        kind: 2
+        OnActivated:
+          m_PersistentCalls:
+            m_Calls: []
+  - rows: []

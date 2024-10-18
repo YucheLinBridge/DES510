@@ -13,8 +13,15 @@ public class MapCreator : MonoBehaviour
     [SerializeField] private float x_offset, y_offset,spacing;
 
     [Space]
-    [SerializeField] private int CurrentIndex = 0;
+    [SerializeField] private int currentIndex = 0;
+    public int INDEX=>currentIndex;
 
+    [Header("Sprites ref")]
+    [SerializeField] private List<ArtData> LineSprites;
+    [SerializeField] private Sprite Node, Main;
+
+    public Sprite NODE => Node;
+    public Sprite MAIN => Main;
 
     [Inject(Id ="grid_parent")]
     private Transform tmpgridsParent;
@@ -89,7 +96,7 @@ public class MapCreator : MonoBehaviour
 
     private void refresh()
     {
-        current_map=data.GetMap(CurrentIndex);
+        current_map=data.GetMap(currentIndex);
         if (tmpGrids==null)
         {
             tmpGrids=new List<List<TmpGrid>>();
@@ -148,4 +155,15 @@ public class MapCreator : MonoBehaviour
         return false;
     }
 
+
+    public Sprite GetLine(string name)
+    {
+        int index = LineSprites.FindIndex(x => x.IsName(name));
+        if (index == -1)
+        {
+            Debug.LogError($"There is no sprite called {name}");
+            return null;
+        }
+        return LineSprites[index].SPRITE;
+    }
 }
