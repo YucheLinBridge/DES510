@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using DG.Tweening;
 
 public class TrainTravelMgr : MonoBehaviour
 {
@@ -30,9 +31,13 @@ public class TrainTravelMgr : MonoBehaviour
 
     [Header("Environment Block")]
     [SerializeField] private List<GameObject> blocks=new List<GameObject>();
-    [SerializeField] private GameObject station_block;
     [SerializeField] private Transform blocks_parent;
     [SerializeField] private float x_offset,x_pedding;
+
+    [Header("Station")]
+    [SerializeField] private GameObject station_block;
+    [SerializeField] private float station_offset;
+
 
     private Queue<Transform> block_transforms = new Queue<Transform>();
 
@@ -45,7 +50,8 @@ public class TrainTravelMgr : MonoBehaviour
 
     private float thelastblock=0;
     private float disfromlastblock = 0;
-
+    private float disfromStation;
+    private bool stationhasshown;
 
     public void StartMoving() {
         foreach (var animator in animators)
@@ -118,6 +124,18 @@ public class TrainTravelMgr : MonoBehaviour
 
     private void move_MoveEnvironment()
     {
+        if (stationhasshown)
+        {
+            disfromStation -= Time.deltaTime * speed;
+            if (disfromStation <= 1)
+            {
+                moving = false;
+                onStop?.Invoke();
+            }
+
+            return;
+        }
+
         train.position += dir *Time.deltaTime * speed;
         disfromlastblock+= Time.deltaTime * speed;
         if (disfromlastblock>=x_offset*0.5f)
@@ -128,6 +146,8 @@ public class TrainTravelMgr : MonoBehaviour
             disfromlastblock = 0;
             thelastblock++;
         }
+
+        
     }
 
     private void createTracks()
@@ -178,7 +198,13 @@ public class TrainTravelMgr : MonoBehaviour
 
     public void ArriveStation()
     {
+        var go= Instantiate(station_block, start.position + dir * ((thelastblock) * .5f * x_offset + x_pedding), Quaternion.identity, blocks_parent);
+        block_transforms.Enqueue(go.transform);
+        stationhasshown = true;
+        disfromStation = (go.transform.position - train.position).magnitude+station_offset;
+        thelastblock++;
 
+        train.DOMove(go.transform.position,disfromStation/speed).SetEase(Ease.InOutSine);
     }
 
 

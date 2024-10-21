@@ -870,18 +870,6 @@ MonoBehaviour:
   virtualCameras:
   - {fileID: 1055605539}
   - {fileID: 995505569}
---- !u!114 &873996575 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7105525997083243200, guid: 74c1cd278a6495d488515cc4f5437b59,
-    type: 3}
-  m_PrefabInstance: {fileID: 1778187058571519643}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28569c2c36507934a8b5a4292608e76a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &907233121
 GameObject:
   m_ObjectHideFlags: 0
@@ -1215,6 +1203,9 @@ MonoBehaviour:
   blocks_parent: {fileID: 1042139021}
   x_offset: 200
   x_pedding: 60
+  station_block: {fileID: 7948600408528612011, guid: 3b07dfe732d0aa842896c9c3e1005f6c,
+    type: 3}
+  station_offset: 0
 --- !u!1 &995505568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1988,14 +1979,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Keyevents:
-  - Name: F1-ShowGame
+  - Name: F1-Arrive Station
     key: 282
     Down:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 873996575}
-          m_TargetAssemblyTypeName: MonoEventUI, DES510
-          m_MethodName: ShowGame
+        - m_Target: {fileID: 987657316}
+          m_TargetAssemblyTypeName: TrainTravelMgr, DES510
+          m_MethodName: ArriveStation
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

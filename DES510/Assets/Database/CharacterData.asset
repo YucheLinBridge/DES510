@@ -25,3 +25,7 @@ MonoBehaviour:
     Name_Shown: ???
     SpeakerPrefab: {fileID: 385380743978627640, guid: 0b7b0af82c86d6d4f8338fe62a9f666d,
       type: 3}
+  - Name: Yile
+    Name_Shown: Yile
+    SpeakerPrefab: {fileID: 385380743978627640, guid: 0b7b0af82c86d6d4f8338fe62a9f666d,
+      type: 3}
