@@ -3,7 +3,10 @@ using Zenject;
 
 public class NetUIInstaller : MonoInstaller
 {
-    [SerializeField] private GameObject GridPrefab;
+    //[SerializeField] private GameObject GridPrefab;
+
+    [Inject]
+    private GridUI_data database;
 
     public override void InstallBindings()
     {
@@ -18,6 +21,6 @@ public class NetUIInstaller : MonoInstaller
     private void bindFactories()
     {
         Container.BindFactory<GridUI, GridUI.Factory>()
-            .FromComponentInNewPrefab(GridPrefab);
+            .FromComponentInNewPrefab(database.Prefab);
     }
 }

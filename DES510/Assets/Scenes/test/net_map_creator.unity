@@ -1308,7 +1308,7 @@ MonoBehaviour:
   x_offset: 1
   y_offset: 1
   spacing: 0
-  currentIndex: 1
+  currentIndex: 0
   LineSprites:
   - name: E
     sprite: {fileID: 21300000, guid: 5a3b9cf507e3065419ad969b9cf34294, type: 3}

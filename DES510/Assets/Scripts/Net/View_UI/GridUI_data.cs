@@ -6,6 +6,8 @@ using System.Collections.Generic;
 [CreateAssetMenu(fileName = "GridUI_data", menuName = "Installers/GridUI_data")]
 public class GridUI_data : ScriptableObjectInstaller<GridUI_data>
 {
+
+    public GameObject Prefab;
     [SerializeField] private float spriteWidth, spriteHeight, spacing;
     [SerializeField] private List<ArtData> LineSprites;
     [SerializeField] private Sprite Node, Main;

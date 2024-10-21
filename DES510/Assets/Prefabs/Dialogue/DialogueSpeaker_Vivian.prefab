@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 970834975720877298}
   - component: {fileID: 6997750703943939428}
   m_Layer: 5
-  m_Name: DialogueSpeaker_test_1
+  m_Name: DialogueSpeaker_Vivian
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
