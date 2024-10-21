@@ -29,12 +29,14 @@ public class WalkToPoint : MonoBehaviour
     private void Update()
     {
         if (moving) {
-            if ((des-transform.position).sqrMagnitude<=.25f)
+            if ((des-transform.position).sqrMagnitude<=.1f)
             {
                 //Debug.Log("Arrived");
                 moving = false;
+                agent.enabled = false;
                 OnArrived?.Invoke();
                 OnArrived.RemoveAllListeners();
+                agent.enabled=true;
             }
         }
     }

@@ -6,7 +6,6 @@ using UnityEngine.Events;
 public class Interaction : MonoBehaviour
 {
     [SerializeField] private Transform stopPoint;
-
     [SerializeField] private List<UnityEvent> InteractiveEvents;
 
     private bool pause;
@@ -29,6 +28,11 @@ public class Interaction : MonoBehaviour
         waittime = time;
     }
 
+    public void TransportPlayerTo(Transform despoint)
+    {
+        Player.Instance.Transport(despoint.position);
+    }
+
     IEnumerator ExcecuteEventByOrder()
     {
         Player.Instance.SetEnable(false);
@@ -45,3 +49,4 @@ public class Interaction : MonoBehaviour
     }
 
 }
+

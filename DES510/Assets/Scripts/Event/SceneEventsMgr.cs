@@ -23,7 +23,7 @@ public class SceneEventsMgr : DialogueEventsMgr
     }
 
 
-    private void generate_puzzle(int index)
+    public void generate_puzzle(int index)
     {
         gridsMgr.Generate(index);
         int puzzle_i = puzzleEndEvents.FindIndex(x=>x.index==index);

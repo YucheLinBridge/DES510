@@ -204,7 +204,7 @@ public class TrainTravelMgr : MonoBehaviour
         disfromStation = (go.transform.position - train.position).magnitude+station_offset;
         thelastblock++;
 
-        train.DOMove(go.transform.position,disfromStation/speed).SetEase(Ease.InOutSine);
+        train.DOMove(go.transform.position,disfromStation/speed).SetEase(Ease.OutSine);
     }
 
 
