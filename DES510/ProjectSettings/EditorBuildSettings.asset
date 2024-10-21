@@ -6,13 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/test/net_test.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
     path: Assets/Scenes/exploration_1_1.unity
     guid: 09a10051fba346f4cb392c875397064e
   - enabled: 1
-    path: Assets/Scenes/test/traintraveling_test.unity
-    guid: e76ab760756958543aec3cc0c21cb320
+    path: Assets/Scenes/travelling_1_1.unity
+    guid: b556685c34eed394085aac0f1cfb82c4
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
