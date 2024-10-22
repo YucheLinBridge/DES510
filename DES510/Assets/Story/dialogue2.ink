@@ -12,7 +12,7 @@ The man tips his hat. #speaker: Mike #layout: -1
  
  ===Section2===
 'I'm Viro...' #speaker: Vivian #layout: 1
-'It's weird, right? That's the name that comes out, but it doesn't feel true.' #speaker: Mike #layout: -1
+'It's weird, right? That's the name that comes out, but it don't feel right.' #speaker: Mike #layout: -1
 'No matter. We've got to keep going, eh? Let me know when you're ready to go.' #speaker: Mike #layout: -1
 * 'Let's go' #speaker: Vivian #layout: 1
 -> Section5
