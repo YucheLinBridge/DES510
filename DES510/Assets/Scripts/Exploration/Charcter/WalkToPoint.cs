@@ -33,10 +33,10 @@ public class WalkToPoint : MonoBehaviour
             {
                 //Debug.Log("Arrived");
                 moving = false;
-                agent.enabled = false;
+                //agent.enabled=false;
                 OnArrived?.Invoke();
                 OnArrived.RemoveAllListeners();
-                agent.enabled=true;
+                //agent.enabled = true;
             }
         }
     }
@@ -50,6 +50,8 @@ public class WalkToPoint : MonoBehaviour
 
     public void SetEnable(bool flag) {
         enable = flag;
+        agent.enabled = flag;
     }
+
 
 }

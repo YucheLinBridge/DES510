@@ -18,6 +18,7 @@ public class Player : WalkToPoint
     public void Transport(Vector3 des)
     {
         transform.position = des;
+        //agent.(des);
     }
 
     public bool GetPlayerDataBool(string name)
@@ -44,6 +45,20 @@ public class Player : WalkToPoint
         else
         {
             playdata_bools.Add(new PlayData_bool(name, true));
+        }
+    }
+
+
+    public void SetPlayerDataBoolFalse(string name)
+    {
+        int index = playdata_bools.FindIndex(x => x.IsName(name));
+        if (index != -1)
+        {
+            playdata_bools[index].SetFlag(false);
+        }
+        else
+        {
+            playdata_bools.Add(new PlayData_bool(name, false));
         }
     }
 

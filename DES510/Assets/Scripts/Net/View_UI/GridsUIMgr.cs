@@ -113,6 +113,7 @@ public class GridsUIMgr : IInitializable
     }
 
     public void End() {
+        ///Debug.Log("End");
         animator?.SetTrigger("END");
         Coroutine_Controller.WaitToDo(() => {
             hide();
