@@ -8,9 +8,9 @@ public class Interaction : MonoBehaviour
     [SerializeField] private Transform stopPoint;
     [SerializeField] private List<UnityEvent> InteractiveEvents;
 
-    private bool pause;
-    private float waittime;
-    private bool triggered;
+    protected bool pause;
+    protected float waittime;
+    protected bool triggered;
 
     public void OnClicked()
     {
@@ -18,7 +18,7 @@ public class Interaction : MonoBehaviour
         Player.Instance.AddEventOnArrive(interact);
     }
 
-    private void interact() {
+    protected virtual void interact() {
         StartCoroutine(ExcecuteEventByOrder());
     }
 

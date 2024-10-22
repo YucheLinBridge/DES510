@@ -22,4 +22,5 @@ Yanjiao Station has become popular in media after Chinese Astronaut Ying Yue Lee
 The astronaut had to use this station everyday to attend higher studies in Beijing, showing to the people that it does not matter where you come from, you can achieve greatness.
 ->Section1
 +[Quit Terminal]
+Logging out...
     -> END

@@ -41,10 +41,12 @@ public class Player : WalkToPoint
         if (index != -1)
         {
             playdata_bools[index].SetFlag(true);
+            
         }
         else
         {
             playdata_bools.Add(new PlayData_bool(name, true));
+            Debug.Log($"Generate {name} and set True");
         }
     }
 
@@ -64,7 +66,8 @@ public class Player : WalkToPoint
 
 }
 
-public struct PlayData_bool {
+//[System.Serializable]
+public class PlayData_bool {
     private string Name;
     private bool Flag;
 
@@ -72,6 +75,7 @@ public struct PlayData_bool {
     public void SetFlag(bool flag)
     {
         Flag=flag;
+        Debug.Log($"Set {Name} {Flag}");
     }
 
     public bool IsName(string name)

@@ -9,26 +9,27 @@ public class LightsMgr_mono : MonoBehaviour
 
     public void TurnOff(int index)
     {
-        lights[index].enabled = false;
+        lights[index].gameObject.SetActive(false);
     }
 
     public void TurnOn(int index)
     {
-        lights[index].enabled = true;
+        lights[index].gameObject.SetActive(true);
     }
 
 
     public void TurnOffAll()
     {
         foreach (Light light in lights) {
-            light.enabled = false;
+            light.gameObject.SetActive(false);
         }
     }
 
     public void TurnOnAll()
     {
-        foreach (Light light in lights) {
-            light.enabled = true;
+        foreach (Light light in lights)
+        {
+            light.gameObject.SetActive(true);
         }
     }
 }
