@@ -1250,19 +1250,7 @@ MonoBehaviour:
   - {fileID: 919132148540101296}
   onStart:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Coroutine_Zenject.Timer_mono, DES510
-        m_MethodName: StartTiming
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onStop:
     m_PersistentCalls:
       m_Calls:
@@ -1290,11 +1278,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  generateTracks: 0
+  generateTracks: 1
   trackParent: {fileID: 642758663}
   spacing: 13
-  start_pending: 50
-  end_pending: 50
+  start_pending: 20
+  end_pending: 0
   trackPrefab: {fileID: 919132149155446097, guid: f73908ab437021d4eba70a88b555e964,
     type: 3}
   track_direction: 1
@@ -1304,7 +1292,7 @@ MonoBehaviour:
   - {fileID: 7948600408528612011, guid: dc75a53fe115c7c40a2d678804afb946, type: 3}
   blocks_parent: {fileID: 1042139021}
   x_offset: 200
-  x_pedding: 60
+  x_pedding: 59.6
   station_block: {fileID: 7948600408528612011, guid: 3b07dfe732d0aa842896c9c3e1005f6c,
     type: 3}
   station_offset: 0

@@ -40,16 +40,21 @@ public class TrainTravelMgr : MonoBehaviour
 
 
     private Queue<Transform> block_transforms = new Queue<Transform>();
+    private Queue<Transform> track_transforms;
 
     private Vector3 dir => (end.position-start.position).normalized;
 
     private float time;
     private float t;
-    private bool moving;
+    private bool moving,stopatStation;
     private int times=0;
 
     private float thelastblock=0;
     private float disfromlastblock = 0;
+
+    private Vector3 thelasttrack_pos;
+    private float disfromlasttrack = 0;
+
     private float disfromStation;
     private bool stationhasshown;
 
@@ -100,6 +105,11 @@ public class TrainTravelMgr : MonoBehaviour
             }
             
         }
+
+        if (moving || stopatStation)
+        {
+            move_MoveTracks();
+        }
     }
 
     private void move_transport()
@@ -137,7 +147,8 @@ public class TrainTravelMgr : MonoBehaviour
         }
 
         train.position += dir *Time.deltaTime * speed;
-        disfromlastblock+= Time.deltaTime * speed;
+        float dis_frame = Time.deltaTime * speed;
+        disfromlastblock += dis_frame;
         if (disfromlastblock>=x_offset*0.5f)
         {
             var block_transform= block_transforms.Dequeue();
@@ -147,20 +158,47 @@ public class TrainTravelMgr : MonoBehaviour
             thelastblock++;
         }
 
+
         
+    }
+
+    private void move_MoveTracks()
+    {
+        if (loopmode!=LoopMode.MoveEnvironment)
+        {
+            return;
+        }
+
+        float dis_frame = Time.deltaTime * speed;
+        disfromlasttrack += dis_frame;
+        if (disfromlasttrack >= spacing)
+        {
+            var track_transform = track_transforms.Dequeue();
+            thelasttrack_pos = thelasttrack_pos + (end.position - start.position).normalized * Mathf.Abs(spacing);
+            track_transform.position = thelasttrack_pos;
+            track_transforms.Enqueue(track_transform);
+            disfromlasttrack = 0;
+        }
     }
 
     private void createTracks()
     {
         float trackLength = -start_pending;
-        Vector3 dir= end.position - start.position;
+        Vector3 dir = end.position - start.position;
         float distance = dir.magnitude;
+
+        if (loopmode==LoopMode.MoveEnvironment)
+        {
+            track_transforms = new Queue<Transform>();
+        }
+
         //Debug.Log($"start={start.position}\nend={end.position}");
         while (true)
         {
             trackLength += Mathf.Abs(spacing);
             var go=Instantiate(trackPrefab,trackParent);
             go.transform.position = Vector3.LerpUnclamped(start.position, end.position, trackLength / distance);
+           
             switch (track_direction)
             {
                 case TrackDirection.Right:
@@ -176,11 +214,19 @@ public class TrainTravelMgr : MonoBehaviour
                 default:
                     break;
             }
+            thelasttrack_pos=go.transform.position;
+
+
+            if (loopmode == LoopMode.MoveEnvironment)
+            {
+                track_transforms.Enqueue(go.transform);
+            }
 
             if (trackLength>=distance+end_pending)
             {
                 break;
             }
+
         }
     }
 
@@ -204,7 +250,10 @@ public class TrainTravelMgr : MonoBehaviour
         disfromStation = (go.transform.position - train.position).magnitude+station_offset;
         thelastblock++;
 
-        train.DOMove(go.transform.position,disfromStation/speed).SetEase(Ease.OutSine);
+        stopatStation=true;
+        train.DOMove(go.transform.position, disfromStation / speed).SetEase(Ease.OutSine).OnComplete(() => {
+            stopatStation = false;
+        });
     }
 
 
