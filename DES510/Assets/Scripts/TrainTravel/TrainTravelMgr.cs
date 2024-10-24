@@ -59,15 +59,22 @@ public class TrainTravelMgr : MonoBehaviour
     private bool stationhasshown;
 
     public void StartMoving() {
-        foreach (var animator in animators)
-        {
-            animator.SetTrigger("MOVE");
-        }
 
-        
+        setAnim(true);
         onStart?.Invoke();
         time =(end.position-start.position).magnitude/speed;
         moving=true;
+    }
+
+    private void setAnim(bool flag) {
+        for (int i = 0; i < animators.Count; i++)
+        {
+            if (flag &&i != 0)
+            {
+                animators[i].speed = Random.Range(.9f, 1.1f);
+            }
+            animators[i].SetBool("MOVE", flag);
+        }
     }
 
     private void Start()
@@ -253,6 +260,7 @@ public class TrainTravelMgr : MonoBehaviour
         stopatStation=true;
         train.DOMove(go.transform.position, disfromStation / speed).SetEase(Ease.OutSine).OnComplete(() => {
             stopatStation = false;
+            setAnim(false);
         });
     }
 
