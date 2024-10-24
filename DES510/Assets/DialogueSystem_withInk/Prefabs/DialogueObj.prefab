@@ -170,13 +170,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txt_Content: {fileID: 3095772374485483098}
+  TypingSpeed: 25
+  AutoWaitTime: 1
   speakerParent: {fileID: 7079101152179637092}
   rightPoint: {fileID: 1497142085746390572}
   centerPoint: {fileID: 5716273297812963667}
   leftPoint: {fileID: 8862178802803327825}
-  left: 10
-  right: 10
-  TypingSpeed: 25
 --- !u!1 &4524851693764589001
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,7 +713,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0.11230469}
-  m_SizeDelta: {x: -700, y: -99.77539}
+  m_SizeDelta: {x: -800, y: -99.77539}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3347547842962868323
 CanvasRenderer:

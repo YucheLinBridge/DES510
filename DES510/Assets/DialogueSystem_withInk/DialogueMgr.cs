@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class DialogueMgr:MonoBehaviour
 {
     [SerializeField] private Transform dialogueParent,dialogueHUD,optionsParent;
+    [SerializeField] private Transform optionsMask;
     [SerializeField] private GameObject dialogueObj,dialogueOption;
     [SerializeField] private CharactersData charactersData;
     [SerializeField] private TextAsset test;
@@ -244,6 +245,7 @@ public class DialogueMgr:MonoBehaviour
         dialogueObj_ins = null;
 
         optionsParent.gameObject.SetActive(false);
+        optionsMask.gameObject.SetActive(false);
     }
 
     private void onClickChoiceButton(Choice choice)
@@ -255,6 +257,7 @@ public class DialogueMgr:MonoBehaviour
     private DialogueOption createOptionView(string text,UnityAction clickevent)
     {
         optionsParent.gameObject.SetActive(true);
+        optionsMask.gameObject.SetActive(true);
         var go = Instantiate(dialogueOption, optionsParent);
         var obj = go.GetComponent<DialogueOption>();
         obj.Show(text,false);
