@@ -17,7 +17,7 @@ The masked figure pauses for a second. #speaker: Yile #layout: -1
 'Gotcha! Don't worry, friend, I'll tell you what I learned soon.' #speaker: Yile #layout: -1
 ->Section3
 ===Section3===
-*'Shall we go to the train?' #speaker: Vivian #layout: 1
+*'Shall we go to the train?' #speaker: Vivian #layout: 1 #event:open_map,2
  -> END
 *'Give me a second, I want to explore here some more.' #speaker: Vivian #layout: 1
  -> END

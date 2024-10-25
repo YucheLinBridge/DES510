@@ -19,14 +19,20 @@ public class DialogueObj : MonoBehaviour
     private DialogueSpeaker speaker;
 
 
-
     private bool typing;
     private string texttoshow;
     private bool auto;
 
+    public bool END => !typing;
+
     public void Show(string content,bool auto)
     {
-        //Speaker.Show(speaker,icon);
+        if (content==null)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+
         this.auto = auto;
 
         if (TypingSpeed==0)

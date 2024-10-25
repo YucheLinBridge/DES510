@@ -5,10 +5,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using Zenject;
+using Coroutine_Zenject;
 
 public class SceneEventsMgr : DialogueEventsMgr
 {
     [SerializeField] private List<PuzzleEvent> puzzleEndEvents;
+
+    [Header("Map")]
+    [SerializeField] private GameObject canvas_map;
+    [SerializeField] private Animator connection;
 
 
     [Inject(Optional = true)]
@@ -42,6 +47,16 @@ public class SceneEventsMgr : DialogueEventsMgr
 
         gridsMgr.ShowGame();
     }
+
+
+    private void open_map(int station)
+    {
+        canvas_map.SetActive(true);
+        Coroutine_Controller.WaitToDo(() => {
+            connection.SetTrigger("SHOW");
+        },1f);
+    }
+
 
     IEnumerator excecuteEvents_completed(int index) {
         for (int i=0;i< puzzleEndEvents[index].OnComplete.Count;i++)

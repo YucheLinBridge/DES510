@@ -1,4 +1,5 @@
 using Ink.Runtime;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,8 +10,8 @@ public class DialogueMgr:MonoBehaviour
     [SerializeField] private Transform optionsMask;
     [SerializeField] private GameObject dialogueObj,dialogueOption;
     [SerializeField] private CharactersData charactersData;
-    [SerializeField] private TextAsset test;
     [SerializeField] private OptionStyle optionStyle;
+
 
     public UnityEvent OnDialogueStart=new UnityEvent(), OnDialogueEnd=new UnityEvent();
 
@@ -44,11 +45,6 @@ public class DialogueMgr:MonoBehaviour
         dialogueHUD.gameObject.SetActive(flag);
     }
 
-    public void Test() {
-        StartStory(test);
-    }
-
-
     public void StartStory(TextAsset inkJsonAsset)
     {
         showDialogueUI(true);
@@ -71,6 +67,7 @@ public class DialogueMgr:MonoBehaviour
         // Remove all the UI on screen
         removeDialogues();
 
+        DialogueObj dialogue=null;
         // Read all the content until we can't continue any more
         if (story.canContinue)
         {
@@ -79,7 +76,7 @@ public class DialogueMgr:MonoBehaviour
             // This removes any white space from the text.
             text = text.Trim();
             // Display the text on screen!
-            createContentView(text);
+            dialogue=createContentView(text);
             if (story.canContinue)
             {
                 return;
@@ -88,36 +85,10 @@ public class DialogueMgr:MonoBehaviour
 
 
         // Display all the choices, if there are any!
-        if (story.currentChoices.Count > 0)
+        if (dialogue &&story.currentChoices.Count > 0)
         {
-            for (int i = 0; i < story.currentChoices.Count; i++)
-            {
-                Choice choice = story.currentChoices[i];
 
-                switch (optionStyle)
-                {
-                    case OptionStyle.None:
-                        createOptionView(choice.text.Trim(), () => {
-                            onClickChoiceButton(choice);
-                        });
-                        break;
-                    case OptionStyle.Number:
-                        createOptionView($"{i+1}.{choice.text.Trim()}", () => {
-                            onClickChoiceButton(choice);
-                        });
-
-                        break;
-                    case OptionStyle.Arrow:
-                        createOptionView($"-> {choice.text.Trim()}", () => {
-                            onClickChoiceButton(choice);
-                        });
-                        break;
-                    default:
-                        break;
-                }
-
-                
-            }
+            StartCoroutine(waitForDialogueEnd(dialogue));
         }
         // If we've read all the content and there's no choices, the story is finished!
         else if(!finished)
@@ -131,6 +102,50 @@ public class DialogueMgr:MonoBehaviour
             Debug.Log("Dialogue End");
             showDialogueUI(false);
         }
+    }
+
+    IEnumerator waitForDialogueEnd(DialogueObj target)
+    {
+        
+        while (!target.END)
+        {
+            yield return null;
+        }
+        createOptions();
+    }
+
+    private void createOptions()
+    {
+        optionsParent.gameObject.SetActive(true);
+        optionsMask.gameObject.SetActive(true);
+        for (int i = 0; i < story.currentChoices.Count; i++)
+        {
+            Choice choice = story.currentChoices[i];
+
+            switch (optionStyle)
+            {
+                case OptionStyle.None:
+                    createOptionView(choice.text.Trim(), () => {
+                        onClickChoiceButton(choice);
+                    });
+                    break;
+                case OptionStyle.Number:
+                    createOptionView($"{i + 1}.{choice.text.Trim()}", () => {
+                        onClickChoiceButton(choice);
+                    });
+
+                    break;
+                case OptionStyle.Arrow:
+                    createOptionView($"-> {choice.text.Trim()}", () => {
+                        onClickChoiceButton(choice);
+                    });
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        createOptionView(null, () => { });
     }
 
     private void handleTags(List<string> currentTags,DialogueObj obj)
@@ -256,18 +271,24 @@ public class DialogueMgr:MonoBehaviour
 
     private DialogueOption createOptionView(string text,UnityAction clickevent)
     {
-        optionsParent.gameObject.SetActive(true);
-        optionsMask.gameObject.SetActive(true);
         var go = Instantiate(dialogueOption, optionsParent);
         var obj = go.GetComponent<DialogueOption>();
-        obj.Show(text,false);
-        obj.SetClicked(clickevent);
-        dialogueOptions.Add(obj);
-        handleTags_option(story.currentTags, obj);
-        return obj;
+        obj.Show(text, false);
+        if (text != null)
+        {
+            obj.SetClicked(clickevent);
+            dialogueOptions.Add(obj);
+            handleTags_option(story.currentTags, obj);
+            Canvas.ForceUpdateCanvases();
+            return obj;
+        }
+        else {
+            Canvas.ForceUpdateCanvases();
+            return null;
+        }
     }
      
-    private void createContentView(string text)
+    private DialogueObj createContentView(string text)
     {
         onLineEnd.RemoveAllListeners();
         var go = Instantiate(dialogueObj,dialogueParent);
@@ -275,6 +296,7 @@ public class DialogueMgr:MonoBehaviour
         obj.Show(text,auto);
         handleTags(story.currentTags,obj);
         dialogueObj_ins=obj;
+        return obj;
     }
 
     public void AutoSwitcher()
