@@ -6,15 +6,17 @@ using Cinemachine;
 public class CamerasMgr : MonoBehaviour
 {
     [SerializeField] private List<CinemachineVirtualCamera> virtualCameras = new List<CinemachineVirtualCamera>();
-
+    [SerializeField] private int defaultCamera;
 
     private void Start()
     {
-        ChangeCamera(0);
+        ChangeCamera(defaultCamera);
     }
 
     public void ChangeCamera(int index)
     {
+        Debug.Log($"Change camera to index={index}");
+
         if (index >= virtualCameras.Count)
         {
             return;

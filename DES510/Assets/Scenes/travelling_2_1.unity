@@ -148,13 +148,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1648431263}
   - {fileID: 1292300886}
-  - {fileID: 1536270152}
   - {fileID: 1921713964}
   - {fileID: 987657315}
-  - {fileID: 1122939177}
   - {fileID: 554872696}
+  - {fileID: 1536270152}
+  - {fileID: 1648431263}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &203844586
@@ -456,6 +455,127 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &409673682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 409673683}
+  - component: {fileID: 409673684}
+  - component: {fileID: 409673685}
+  m_Layer: 0
+  m_Name: Timer_WaitForTrainAnim
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &409673683
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409673682}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 554872696}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &409673684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409673682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51141ba20fc414141b3d025a2dd045d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 2
+  timmmingOnStart: 0
+  OnTimming:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 919132148540101296}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: STARTUP
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnTimesUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 870160713}
+        m_TargetAssemblyTypeName: CamerasMgr, DES510
+        m_MethodName: ChangeCamera
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 409673685}
+        m_TargetAssemblyTypeName: Coroutine_Zenject.Timer_mono, DES510
+        m_MethodName: StartTiming
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &409673685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409673682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51141ba20fc414141b3d025a2dd045d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 2
+  timmmingOnStart: 0
+  OnTimming:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTimesUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 987657316}
+        m_TargetAssemblyTypeName: TrainTravelMgr, DES510
+        m_MethodName: StartMoving
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &510647104
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,7 +785,7 @@ GameObject:
   - component: {fileID: 554872696}
   - component: {fileID: 554872697}
   m_Layer: 0
-  m_Name: ShutDownTimer
+  m_Name: Timers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -683,7 +803,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 409673683}
   m_Father: {fileID: 62337762}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &554872697
@@ -1010,6 +1131,7 @@ MonoBehaviour:
   virtualCameras:
   - {fileID: 1055605539}
   - {fileID: 995505569}
+  defaultCamera: 1
 --- !u!1 &961739749
 GameObject:
   m_ObjectHideFlags: 0
@@ -1117,7 +1239,7 @@ Camera:
   far clip plane: 15000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.3
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1141,8 +1263,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961739749}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.06799743, y: 0.9091781, z: -0.37659386, w: -0.16416034}
-  m_LocalPosition: {x: 3.54, y: 8.83, z: -13.84}
+  m_LocalRotation: {x: 0, y: 0.9715492, z: -0.23683812, w: 0}
+  m_LocalPosition: {x: 3.04, y: 8.83, z: -13.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1231,7 +1353,7 @@ MonoBehaviour:
   start: {fileID: 240744673}
   end: {fileID: 848309686}
   train: {fileID: 1492543585}
-  autoStart: 1
+  autoStart: 0
   speed: 10
   looptimes: 1
   loopmode: 1
@@ -1283,7 +1405,7 @@ MonoBehaviour:
   - {fileID: 7948600408528612011, guid: dc75a53fe115c7c40a2d678804afb946, type: 3}
   blocks_parent: {fileID: 1042139021}
   x_offset: 200
-  x_pedding: 59.05
+  x_pedding: 100
   station_block: {fileID: 7948600408528612011, guid: 3b07dfe732d0aa842896c9c3e1005f6c,
     type: 3}
   station_offset: 0
@@ -1321,7 +1443,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 0
+  m_Priority: 100
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 1492543585}
@@ -1465,14 +1587,14 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 100
+  m_Priority: 0
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 1492543585}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 8.3
-    NearClipPlane: 0.3
+    NearClipPlane: -5
     FarClipPlane: 15000
     Dutch: 0
     ModeOverride: 0
@@ -1523,100 +1645,6 @@ Transform:
   - {fileID: 2002619125}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1122939176
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1122939177}
-  - component: {fileID: 1122939178}
-  - component: {fileID: 1122939179}
-  m_Layer: 0
-  m_Name: Dilogue_3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1122939177
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1122939176}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 62337762}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1122939178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1122939176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea5e49f3e4ab69645a41ca0af9024bc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  label: Conversation on the train
-  DialogueData: {fileID: 4900000, guid: 3624e407601233a4fba8252c2a8d7c3f, type: 3}
-  OnEnd:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 987657316}
-        m_TargetAssemblyTypeName: TrainTravelMgr, DES510
-        m_MethodName: ArriveStation
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1122939179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1122939176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51141ba20fc414141b3d025a2dd045d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  time: 5
-  timmmingOnStart: 1
-  OnTimming:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTimesUp:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1122939178}
-        m_TargetAssemblyTypeName: DialogueOnScene, DES510
-        m_MethodName: StartStory
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1160234425
 GameObject:
   m_ObjectHideFlags: 0
@@ -1730,122 +1758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f8a0fd74c14d247ae1d01bfaaf510c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puzzleEndEvents:
-  - index: 0
-    OnComplete:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1292300885}
-          m_TargetAssemblyTypeName: SceneEventsMgr, DES510
-          m_MethodName: Wait
-          m_Mode: 4
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 3
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1292300885}
-          m_TargetAssemblyTypeName: SceneEventsMgr, DES510
-          m_MethodName: End
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 3
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    OnEnd:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 870160713}
-          m_TargetAssemblyTypeName: CamerasMgr, DES510
-          m_MethodName: ChangeCamera
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 2
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1292300885}
-          m_TargetAssemblyTypeName: SceneEventsMgr, DES510
-          m_MethodName: Wait
-          m_Mode: 4
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 2
-            m_FloatArgument: 2
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 919132148540101296}
-          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-          m_MethodName: SetTrigger
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 2
-            m_FloatArgument: 1
-            m_StringArgument: STARTUP
-            m_BoolArgument: 0
-          m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1292300885}
-          m_TargetAssemblyTypeName: SceneEventsMgr, DES510
-          m_MethodName: Wait
-          m_Mode: 4
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 2
-            m_FloatArgument: 3
-            m_StringArgument: STARTUP
-            m_BoolArgument: 0
-          m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: DialogueOnScene, DES510
-          m_MethodName: StartStory
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 1
-            m_FloatArgument: 2.5
-            m_StringArgument: STARTUP
-            m_BoolArgument: 0
-          m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 870160713}
-          m_TargetAssemblyTypeName: CamerasMgr, DES510
-          m_MethodName: ChangeCamera
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 1
-            m_FloatArgument: 2.5
-            m_StringArgument: STARTUP
-            m_BoolArgument: 0
-          m_CallState: 2
+  puzzleEndEvents: []
   canvas_map: {fileID: 0}
   connection: {fileID: 0}
 --- !u!4 &1292300886
@@ -2439,14 +2352,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 2116584164}
-  FadeInStart: 0
-  FadeInTime: 1
+  FadeInStart: 1
+  FadeInTime: 1.5
   FadeInAlpha_start: 1
   FadeInAlpha_end: 0
   FadeInEase: 3
   OnFadeIn:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 409673684}
+        m_TargetAssemblyTypeName: Coroutine_Zenject.Timer_mono, DES510
+        m_MethodName: StartTiming
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: STARTUP
+          m_BoolArgument: 0
+        m_CallState: 2
   FadeOutTime: 1.5
   FadeOutAlpha_start: 0
   FadeOutAlpha_end: 1
