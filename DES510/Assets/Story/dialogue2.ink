@@ -2,12 +2,12 @@
 The man tips his hat. #speaker: Mike #layout: -1
 
  * 'You're welcome.' #speaker: Vivian #layout: 1
- 'Ah, I forgot to introduce myself. I'm Mico...I think.' #speaker: Mike #layout: -1
-  He pauses for a moment, almost as if he forgot his own name and had to make sure.#speaker: Mike #layout: -1
+ 'Ah, I forgot to introduce myself. I'm Mico... I think.' #speaker: Mike #layout: -1
+  It feels almost as if he forgot his own name and had to make sure.#speaker: Mike #layout: -1
   -> Section2
  * 'So what do we do now?' #speaker: Vivian #layout: 1
- 'We should head towards that station...Oh! I forgot to introduce myself, where are my manners...I'm Mico, I believe.'#speaker: Mike #layout: -1
- He pauses for a moment, almost as if he forgot his own name and had to make sure. #speaker: Mike #layout: -1
+ 'We should head towards that station... Oh! I forgot to introduce myself, where are my manners... I'm Mico, I believe.'#speaker: Mike #layout: -1
+ It feels almost as if he forgot his own name and had to make sure. #speaker: Mike #layout: -1
  -> Section2
  
  ===Section2===
@@ -18,8 +18,8 @@ The man tips his hat. #speaker: Mike #layout: -1
 -> Section5
 * 'Do you know anything else?' #speaker: Vivian #layout: 1
 Mico pauses for a moment. #speaker: Mike #layout: -1
-'Well, wherever we are seems vast, endless. There are barely any roads, mostly tracks.' #speaker: Mike #layout: -1
-'And, this train. It should belong to someone, but I found it abandoned, left to rust.' #speaker: Mike #layout: -1 
+'Well, wherever we are seems vast and endless. There are barely any roads, mostly tracks.' #speaker: Mike #layout: -1
+'And this train. It should belong to someone, but I found it abandoned, left to rust.' #speaker: Mike #layout: -1 
 ->Section3
 
 -> Section5
