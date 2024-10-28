@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77c593bf24bc30b4bbb1aea3912190ec, type: 3}
+  m_Name: MusicsSetting
+  m_EditorClassIdentifier: 
+  timeFadeIn: 2
+  timeFadeOut: 2
+  musics:
+  - {fileID: 8300000, guid: b8075a32ea7e63b49ba0e3bd1ed85c05, type: 3}
+  - {fileID: 8300000, guid: 12d59e4ad27adbb4eb2d28d47ddec3a0, type: 3}
+  - {fileID: 8300000, guid: 294c3d98ef1c25d40aad8aa94b455c60, type: 3}
+  - {fileID: 8300000, guid: acd6d072de7562441978b970a1609be7, type: 3}
+  - {fileID: 8300000, guid: d2ed96bfd84532f488b99ae711d66809, type: 3}

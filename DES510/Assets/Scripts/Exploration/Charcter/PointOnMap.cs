@@ -21,18 +21,21 @@ public class PointOnMap : MonoBehaviour, IPointerUpHandler
         //Debug.Log("Clicked");
         Ray ray = Camera.main.ScreenPointToRay(eventData.position);
         if (Physics.Linecast(ray.origin, ray.origin+ ray.direction*1000, out var hitinfo, LayerMask)){
-            onPointOnMap?.Invoke(hitinfo.point);
+            
             if (hitinfo.collider.gameObject.layer==LayerMask.NameToLayer(GROUND_LAYER))
             {
-                
-            }else if (hitinfo.collider.gameObject.layer == LayerMask.NameToLayer(CHARACTER_LAYER))
+                onPointOnMap?.Invoke(hitinfo.point);
+            }
+            else if (hitinfo.collider.gameObject.layer == LayerMask.NameToLayer(CHARACTER_LAYER))
             {
                 hitinfo.collider.GetComponent<Interaction>().OnClicked();
             }
             else
             {
                 Debug.Log("Wrong layer");
+                return;
             }
+            
         }
 
         //rays.Add(ray);

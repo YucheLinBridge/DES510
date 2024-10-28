@@ -1010,6 +1010,7 @@ MonoBehaviour:
   virtualCameras:
   - {fileID: 1055605539}
   - {fileID: 995505569}
+  defaultCamera: 0
 --- !u!1 &961739749
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,6 +1240,7 @@ MonoBehaviour:
   - {fileID: 919132148540101296}
   - {fileID: 7277070253457672191}
   - {fileID: 7277070253457672190}
+  - {fileID: 7277070253457672192}
   onStart:
     m_PersistentCalls:
       m_Calls: []
@@ -1846,6 +1848,8 @@ MonoBehaviour:
             m_StringArgument: STARTUP
             m_BoolArgument: 0
           m_CallState: 2
+  canvas_map: {fileID: 0}
+  connection: {fileID: 0}
 --- !u!4 &1292300886
 Transform:
   m_ObjectHideFlags: 0
@@ -2786,6 +2790,12 @@ Animator:
 --- !u!95 &7277070253457672191 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 3840084689865920884, guid: 45ca2cc58cba25f49bf7e8a327d3272c,
+    type: 3}
+  m_PrefabInstance: {fileID: 7277070253457672189}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7277070253457672192 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1168783951632620610, guid: 45ca2cc58cba25f49bf7e8a327d3272c,
     type: 3}
   m_PrefabInstance: {fileID: 7277070253457672189}
   m_PrefabAsset: {fileID: 0}

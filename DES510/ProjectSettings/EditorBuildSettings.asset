@@ -14,5 +14,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/exploration_1_2.unity
     guid: 5e83164a31a1fff42a402a4cf9257ac0
+  - enabled: 1
+    path: Assets/Scenes/travelling_2.unity
+    guid: 60cf20b80a148c74f8b6a4dd66cbad04
+  - enabled: 1
+    path: Assets/Scenes/exploration_2.unity
+    guid: 6876183f9ed85de42b0921d3745f6310
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

@@ -22,6 +22,9 @@ public class SceneEventsMgr : DialogueEventsMgr
     private float timewait = 0;
 
 
+    [Inject]
+    private MusicsMgr musicMgr;
+
     private void Awake()
     {
         Instance = this;
@@ -100,6 +103,11 @@ public class SceneEventsMgr : DialogueEventsMgr
     public void Wait(float time)
     {
         timewait = time;
+    }
+
+    public void PlayMusic(int index)
+    {
+        musicMgr.Play(index);
     }
 
 
