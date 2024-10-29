@@ -13,6 +13,7 @@ public class CondictionInteraction : Interaction
     }
 
 
+
     public void CheckCondictions()
     {
         for (int i=0;i<Condictions.Count;i++)

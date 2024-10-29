@@ -19,6 +19,9 @@ public class SceneEventsMgr : DialogueEventsMgr
     [Inject(Optional = true)]
     private GridsUIMgr gridsMgr;
 
+    [Header("Dialogue")]
+    [SerializeField] private List<DialogueEvent> DialogueEvents;
+
     private float timewait = 0;
 
 
@@ -55,7 +58,11 @@ public class SceneEventsMgr : DialogueEventsMgr
     }
 
 
-    private void open_map(int station)
+    /// <summary>
+    /// Open the map UI and station
+    /// </summary>
+    /// <param name="station"></param>
+    public void open_map(int station)
     {
         canvas_map.SetActive(true);
         Coroutine_Controller.WaitToDo(() => {
@@ -88,6 +95,18 @@ public class SceneEventsMgr : DialogueEventsMgr
             timewait = 0;
         }
     }
+    
+    IEnumerator excecuteEvents_dialogues(int index) {
+        for (int i = 0; i < DialogueEvents[index].Events.Count; i++)
+        {
+            DialogueEvents[index].Events[i].Invoke();
+            if (timewait > 0)
+            {
+                yield return new WaitForSeconds(timewait);
+            }
+            timewait = 0;
+        }
+    }
 
 
     private void addRelationshipLv((int,int)rawdata) //Because I need to call this method with SendMessage
@@ -96,7 +115,10 @@ public class SceneEventsMgr : DialogueEventsMgr
         int value= rawdata.Item2;
     }
 
-
+    private void excecute(int index)
+    {
+        StartCoroutine(excecuteEvents_dialogues(index));
+    }
 
     public void End()
     {
@@ -125,4 +147,9 @@ public class PuzzleEvent
 {
     public int index;
     public List<UnityEvent> OnComplete,OnEnd;
+}
+
+[System.Serializable]
+public class DialogueEvent {
+    public List<UnityEvent> Events;
 }
