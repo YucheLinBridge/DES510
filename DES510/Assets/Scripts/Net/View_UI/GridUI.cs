@@ -18,6 +18,9 @@ public class GridUI : MonoBehaviour
     [Inject]
     private GridUI_data database;
 
+    [Inject]
+    private SFXMgr sfxMgr;
+
     private bool locked = false;
     private bool cannotRotate = false;
 
@@ -34,6 +37,7 @@ public class GridUI : MonoBehaviour
         transform.DORotate(transform.rotation.eulerAngles - Vector3.forward * 90f, .5f).OnComplete(() => {
             locked = false;
         });
+        sfxMgr.PlaySFX(2);
     }
 
     public void SetGrid(Net.Grid grid)

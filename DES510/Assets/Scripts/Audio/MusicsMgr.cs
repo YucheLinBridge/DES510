@@ -43,6 +43,8 @@ public class MusicsMgr :IInitializable
             });
             premusic = playing_index;
             playing_index = index;
+
+            Debug.Log($"Change music to index={index}");
         }
     }
 }

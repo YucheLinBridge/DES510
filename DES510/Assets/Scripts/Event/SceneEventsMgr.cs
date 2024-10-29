@@ -25,6 +25,9 @@ public class SceneEventsMgr : DialogueEventsMgr
     [Inject]
     private MusicsMgr musicMgr;
 
+    [Inject]
+    private SFXMgr sfxMgr;
+
     private void Awake()
     {
         Instance = this;
@@ -110,6 +113,10 @@ public class SceneEventsMgr : DialogueEventsMgr
         musicMgr.Play(index);
     }
 
+    public void PlaySFX(int index)
+    {
+        sfxMgr.PlaySFX(index);
+    }
 
 }
 
