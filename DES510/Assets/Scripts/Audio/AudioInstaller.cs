@@ -5,11 +5,16 @@ using Zenject;
 public class AudioInstaller : MonoInstaller
 {
     [SerializeField] private AudioSource musicPlayer;
+    [SerializeField] private Transform sFXsParent;
+
+    [Inject]
+    private SFXSetting SFX_setting;
 
     public override void InstallBindings()
     {
         bindInstance();
         bindScripts();
+        bindFactories();
     }
 
     private void bindInstance()
@@ -20,5 +25,11 @@ public class AudioInstaller : MonoInstaller
     private void bindScripts()
     {
         Container.BindInterfacesAndSelfTo<MusicsMgr>().AsSingle();
+        Container.Bind<SFXMgr>().AsSingle();
+    }
+
+    private void bindFactories()
+    {
+        Container.BindFactory<AudioClip, SFX_mono, SFX_mono.Factory>().FromPoolableMemoryPool(pool =>pool.FromComponentInNewPrefab(SFX_setting.SFX_prefab).UnderTransform(sFXsParent));
     }
 }

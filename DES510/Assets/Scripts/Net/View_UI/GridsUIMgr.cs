@@ -25,6 +25,9 @@ public class GridsUIMgr : IInitializable
     [Inject(Id = "grid_anim",Optional =true)]
     private Animator animator;
 
+    [Inject]
+    private SFXMgr sfxMgr;
+
     private Map map;
     private List<GridUI> grids;
 
@@ -109,6 +112,7 @@ public class GridsUIMgr : IInitializable
         {
             animator?.SetTrigger("COMPLETED");
             OnCompleted?.Invoke();
+            Coroutine_Controller.WaitToDo(() => { sfxMgr.PlaySFX(3); },.6f);
         }
     }
 
