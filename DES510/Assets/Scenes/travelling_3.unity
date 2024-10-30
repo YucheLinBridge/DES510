@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: dc3a78960960078478228fdea8249501, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -409,7 +409,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 21.86
-    NearClipPlane: -50
+    NearClipPlane: 0.01
     FarClipPlane: 15000
     Dutch: 0
     ModeOverride: 0
@@ -433,8 +433,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 341312669}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0356119, y: 0.9286193, z: -0.0924897, w: -0.3575523}
-  m_LocalPosition: {x: -3.49, y: 21.84, z: -14.84}
+  m_LocalRotation: {x: -0.030366158, y: 0.917547, z: -0.071446486, w: -0.38997543}
+  m_LocalPosition: {x: 16.11, y: 26.150002, z: 13.960001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -819,7 +819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 8.21, z: 2.9}
+  m_FollowOffset: {x: 0, y: 23.9, z: 14}
   m_XDamping: 0
   m_YDamping: 0
   m_ZDamping: 0
@@ -1165,7 +1165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4044717213e31446939f7bd49c896ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TrackedObjectOffset: {x: -7.3, y: 19.82, z: -5.4}
+  m_TrackedObjectOffset: {x: -28.2, y: 15.86, z: -14.7}
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
@@ -1193,7 +1193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: -0.7, y: 21.8, z: 1.9}
+  m_FollowOffset: {x: 18.9, y: 26.11, z: 30.7}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -1390,8 +1390,8 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 15000
-  field of view: 60
-  orthographic: 1
+  field of view: 24
+  orthographic: 0
   orthographic size: 6
   m_Depth: -1
   m_CullingMask:
@@ -1417,7 +1417,7 @@ Transform:
   m_GameObject: {fileID: 961739749}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.9715492, z: -0.23683812, w: 0}
-  m_LocalPosition: {x: 3.04, y: 8.25, z: -13.84}
+  m_LocalPosition: {x: 0.2, y: 18.47, z: 8.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1530,11 +1530,11 @@ MonoBehaviour:
     type: 3}
   track_direction: 1
   blocks:
-  - {fileID: 9021606670791593293, guid: 308f62c25c5189b40b9d42d26e47926a, type: 3}
-  - {fileID: 9021606670791593293, guid: 308f62c25c5189b40b9d42d26e47926a, type: 3}
-  - {fileID: 9021606670791593293, guid: 308f62c25c5189b40b9d42d26e47926a, type: 3}
-  - {fileID: 9021606670791593293, guid: 308f62c25c5189b40b9d42d26e47926a, type: 3}
-  - {fileID: 9021606670791593293, guid: 308f62c25c5189b40b9d42d26e47926a, type: 3}
+  - {fileID: 9021606670791593293, guid: 8fe4e74e8de20844da4c10f4b8bba26d, type: 3}
+  - {fileID: 9021606670791593293, guid: 8fe4e74e8de20844da4c10f4b8bba26d, type: 3}
+  - {fileID: 9021606670791593293, guid: 8fe4e74e8de20844da4c10f4b8bba26d, type: 3}
+  - {fileID: 9021606670791593293, guid: 8fe4e74e8de20844da4c10f4b8bba26d, type: 3}
+  - {fileID: 9021606670791593293, guid: 8fe4e74e8de20844da4c10f4b8bba26d, type: 3}
   blocks_parent: {fileID: 1042139021}
   x_offset: 200
   x_pedding: 100
@@ -1580,7 +1580,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 1492543585}
   m_Lens:
-    FieldOfView: 60
+    FieldOfView: 24
     OrthographicSize: 6
     NearClipPlane: 0.3
     FarClipPlane: 15000
@@ -1607,7 +1607,7 @@ Transform:
   m_GameObject: {fileID: 995505568}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.9715492, z: -0.23683812, w: 0}
-  m_LocalPosition: {x: 3.04, y: 8.25, z: -13.84}
+  m_LocalPosition: {x: 0.2, y: 18.47, z: 8.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1683,14 +1683,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1055605536}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.06799743, y: 0.9091781, z: -0.37659386, w: -0.16416034}
-  m_LocalPosition: {x: 3.54, y: 8.25, z: -13.84}
+  m_LocalRotation: {x: -0.07129264, y: 0.9014023, z: -0.39484388, w: -0.16275635}
+  m_LocalPosition: {x: 3.54, y: 23.94, z: -2.7399998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 522339386}
   m_Father: {fileID: 870160712}
-  m_LocalEulerAnglesHint: {x: 45, y: 200.47, z: 0}
+  m_LocalEulerAnglesHint: {x: 47.31, y: 200.47, z: 0}
 --- !u!114 &1055605538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1724,7 +1724,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 1492543585}
   m_Lens:
-    FieldOfView: 60
+    FieldOfView: 38
     OrthographicSize: 8.3
     NearClipPlane: 0.01
     FarClipPlane: 15000
@@ -2059,7 +2059,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.13333334
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 306e782aa287d714a9f9b6dd8dda7d79, type: 2}
   m_BuildHeightMesh: 0
@@ -2089,7 +2089,6 @@ GameObject:
   - component: {fileID: 1393042453}
   - component: {fileID: 1393042456}
   - component: {fileID: 1393042455}
-  - component: {fileID: 1393042454}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -2112,28 +2111,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 995505570}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1393042454
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1393042452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa7155796051b734daa718462081dc5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_BindingMode: 4
-  m_FollowOffset: {x: -0.5, y: 8.21, z: 2.9}
-  m_XDamping: 0
-  m_YDamping: 0
-  m_ZDamping: 0
-  m_AngularDampingMode: 0
-  m_PitchDamping: 0
-  m_YawDamping: 0
-  m_RollDamping: 0
-  m_AngularDamping: 0
 --- !u!114 &1393042455
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -2309,19 +2286,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Keyevents:
-  - Name: F1-Arrive Station
+  - Name: F1-ChangeCamera
     key: 282
     Down:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 987657316}
-          m_TargetAssemblyTypeName: TrainTravelMgr, DES510
-          m_MethodName: ArriveStation
-          m_Mode: 1
+        - m_Target: {fileID: 870160713}
+          m_TargetAssemblyTypeName: CamerasMgr, DES510
+          m_MethodName: ChangeCamera
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
+            m_IntArgument: 2
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0

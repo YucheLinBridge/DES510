@@ -25,7 +25,17 @@ public class GridUI_data : ScriptableObjectInstaller<GridUI_data>
         return LineSprites[index].SPRITE;
     }
 
+    public Sprite GetLineBG(string name)
+    {
+        int index = LineSprites.FindIndex(x => x.IsName(name));
+        if (index == -1)
+        {
+            Debug.LogError($"There is no sprite called {name}");
+            return null;
+        }
+        return LineSprites[index].BG;
 
+    }
 
     public float WIDTH => spriteWidth;
     public float HEIGHT => spriteHeight;

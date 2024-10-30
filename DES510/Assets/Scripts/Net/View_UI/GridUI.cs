@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class GridUI : MonoBehaviour
 {
     private int x, y;
-    [SerializeField] private Image line, node;
+    [SerializeField] private Image line,line_bg, node,node_bg;
     [SerializeField] private Color line_active, line_inactive, node_active, node_inactive;
 
 
@@ -44,6 +44,17 @@ public class GridUI : MonoBehaviour
     {
         //Debug.Log($"Line_{grid.toString()}");
         line.sprite = database.GetLine(grid.toString());
+
+        var bg= database.GetLineBG(grid.toString());
+        if (bg)
+        {
+            line_bg.sprite = bg;
+        }
+        else
+        {
+            line_bg.gameObject.SetActive(false);
+        }
+        
         //Resources.Load<Sprite>($"Line_{}");// as Sprite;
         if (grid.IsNode())
         {
@@ -57,6 +68,7 @@ public class GridUI : MonoBehaviour
         else
         {
             node.enabled = false;
+            node_bg.enabled = false;
         }
 
         cannotRotate = grid.CANNOTROT;
@@ -65,8 +77,8 @@ public class GridUI : MonoBehaviour
 
     public void Activate(bool flag)
     {
-        line.color = flag ? line_active : line_inactive;
-        node.color = flag ? node_active : node_inactive;
+        line_bg.color = flag ? line_active : line_inactive;
+        node_bg.color = flag ? node_active : node_inactive;
     }
 
     private void rotateTo(int dir)

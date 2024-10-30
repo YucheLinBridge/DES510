@@ -64,8 +64,11 @@ namespace Net {
     public class ArtData {
         [SerializeField] private string name;
         [SerializeField] private Sprite sprite;
+        [SerializeField] private Sprite bg;
         
         public Sprite SPRITE=>sprite;
+        public Sprite BG=>bg;
+
 
         public bool IsName(string name)
         {
