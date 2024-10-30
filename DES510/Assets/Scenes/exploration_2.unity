@@ -2085,7 +2085,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: acd742c541c66614da5543bedd7329f5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.02
+      value: 1.956
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: acd742c541c66614da5543bedd7329f5,
         type: 3}
@@ -6130,7 +6130,6 @@ Transform:
   m_Children:
   - {fileID: 2143393693}
   - {fileID: 193189668}
-  - {fileID: 1427115057}
   m_Father: {fileID: 2009497672}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1287206602
@@ -6827,7 +6826,7 @@ Transform:
   - {fileID: 1298190678}
   - {fileID: 1863209846}
   - {fileID: 458142566}
-  m_Father: {fileID: 1275902817}
+  m_Father: {fileID: 2061913377}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1427115058
 BoxCollider:
@@ -6911,7 +6910,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.335, y: 0.405, z: 1.11}
+  m_Extents: {x: 0.67, y: 1.26, z: 1.89}
   m_MoveThreshold: 0.1
   m_Carve: 0
   m_CarveOnlyStationary: 1
@@ -9108,6 +9107,7 @@ Transform:
   - {fileID: 1287206603}
   - {fileID: 1689894296}
   - {fileID: 508225638}
+  - {fileID: 1427115057}
   m_Father: {fileID: 510647105}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2062214937
