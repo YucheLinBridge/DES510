@@ -218,7 +218,7 @@ public class DialogueMgr:MonoBehaviour
         {
             obj.SetPortrait(portrait);
             obj.SetSpeakerLayout(layout);
-            
+
         }
 
     }

@@ -433,7 +433,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 341312669}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.030366158, y: 0.917547, z: -0.071446486, w: -0.38997543}
+  m_LocalRotation: {x: 0.16600369, y: 0.7723592, z: 0.22477096, w: -0.57042277}
   m_LocalPosition: {x: 16.11, y: 26.150002, z: 13.960001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1165,7 +1165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4044717213e31446939f7bd49c896ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TrackedObjectOffset: {x: -28.2, y: 15.86, z: -14.7}
+  m_TrackedObjectOffset: {x: -360, y: 278.2, z: -85.9}
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
@@ -1526,7 +1526,7 @@ MonoBehaviour:
   spacing: 13
   start_pending: 20
   end_pending: 100
-  trackPrefab: {fileID: 919132149155446097, guid: f73908ab437021d4eba70a88b555e964,
+  trackPrefab: {fileID: 121540474649623064, guid: a29c32ae1932ef84ca4a02973032a4ec,
     type: 3}
   track_direction: 1
   blocks:
@@ -2416,6 +2416,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 510647105}
     m_Modifications:
+    - target: {fileID: 261328377292598856, guid: 29a5948aad4bafb4abd4f9bddffe02cf,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2ffd23d274e553f408cc229b4aab04d7, type: 2}
     - target: {fileID: 7948600408528612011, guid: 29a5948aad4bafb4abd4f9bddffe02cf,
         type: 3}
       propertyPath: m_Name

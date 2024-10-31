@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 601b077f97c66fa488826bc302b8484b, type: 3}
+  m_Name: GridUI_data_forCapture
+  m_EditorClassIdentifier: 
+  spriteWidth: 300
+  spriteHeight: 300
+  spacing: 0
+  LineSprites:
+  - name: E
+    sprite: {fileID: 21300000, guid: 5a3b9cf507e3065419ad969b9cf34294, type: 3}
+  - name: EW
+    sprite: {fileID: 21300000, guid: 0e2f4ff6a1dab0849ad6ea983e908586, type: 3}
+  - name: N
+    sprite: {fileID: 21300000, guid: 7dec7b5a3a8d6fd45b83ab54a3e188fa, type: 3}
+  - name: NE
+    sprite: {fileID: 21300000, guid: ed16805df98fdba48a992ac9b6b17e8e, type: 3}
+  - name: NEW
+    sprite: {fileID: 21300000, guid: 1eb51b994bbe77345a368633c1769fb7, type: 3}
+  - name: NS
+    sprite: {fileID: 21300000, guid: c0c6f800e3dfd0d46b9e808c03b5b2fd, type: 3}
+  - name: NSE
+    sprite: {fileID: 21300000, guid: 28b6b2658fb553044998ed696ed46188, type: 3}
+  - name: NSEW
+    sprite: {fileID: 21300000, guid: e0cbdd5cc09f3774a8fd70e3ba3746c7, type: 3}
+  - name: NSW
+    sprite: {fileID: 21300000, guid: 8f2d8857946d42f45aff6f70a2d0762b, type: 3}
+  - name: NW
+    sprite: {fileID: 21300000, guid: db98db9c1e7b7ef4c98e25a8ce9611d3, type: 3}
+  - name: S
+    sprite: {fileID: 21300000, guid: 06251813f5778494a9a4885571110db5, type: 3}
+  - name: SE
+    sprite: {fileID: 21300000, guid: 86277c7a5b0482b4294521cd55beb89d, type: 3}
+  - name: SEW
+    sprite: {fileID: 21300000, guid: 0405b345b071ef14faddcc2fe9661801, type: 3}
+  - name: SW
+    sprite: {fileID: 21300000, guid: c831d7e39cc0c3e49887f33c8595bc9e, type: 3}
+  - name: W
+    sprite: {fileID: 21300000, guid: 383bd61951738cd4f87a0e60759b08e2, type: 3}
+  Node: {fileID: 21300000, guid: f49b7b10a20309b44a916cb8e18372e8, type: 3}
+  Main: {fileID: 21300000, guid: 3f0341fa3fd77f04ea8b4ff7ee63431d, type: 3}

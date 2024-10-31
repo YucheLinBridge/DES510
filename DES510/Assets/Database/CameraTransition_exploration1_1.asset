@@ -28,7 +28,7 @@ MonoBehaviour:
     m_To: Virtual Camera_train_end
     m_Blend:
       m_Style: 1
-      m_Time: 5
+      m_Time: 7.5
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []

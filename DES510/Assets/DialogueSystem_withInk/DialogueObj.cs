@@ -58,6 +58,11 @@ public class DialogueObj : MonoBehaviour
         }
     }
 
+    public void SetFont(TMP_FontAsset font)
+    {
+        txt_Content.font = font;
+    }
+
     IEnumerator Type()
     {
         typing=true;
@@ -99,6 +104,11 @@ public class DialogueObj : MonoBehaviour
         var go = Instantiate(character.SpeakerPrefab, speakerParent);
         speaker = go.GetComponent<DialogueSpeaker>();
         speaker.SetName(character.Name_Shown);
+
+        if (character.FontAsset)
+        {
+            SetFont(character.FontAsset);
+        }
     }
 
     public void SetSpeakerLayout(int layout)
