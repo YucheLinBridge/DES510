@@ -22,14 +22,14 @@ MonoBehaviour:
     Name_Shown: Mico
     SpeakerPrefab: {fileID: 385380743978627640, guid: 0b7b0af82c86d6d4f8338fe62a9f666d,
       type: 3}
-    FontAsset: {fileID: 11400000, guid: 3c109762a4143c7429018745e92d4d66, type: 2}
+    FontAsset: {fileID: 0}
   - Name: Mike_unknown
     Name_Shown: ???
     SpeakerPrefab: {fileID: 385380743978627640, guid: 0b7b0af82c86d6d4f8338fe62a9f666d,
       type: 3}
-    FontAsset: {fileID: 11400000, guid: 3c109762a4143c7429018745e92d4d66, type: 2}
+    FontAsset: {fileID: 0}
   - Name: Yile
     Name_Shown: Yile
     SpeakerPrefab: {fileID: 385380743978627640, guid: c6696801d23919c42a9922dfe521e4f2,
       type: 3}
-    FontAsset: {fileID: 11400000, guid: d6a5a0acb63029643afa2ddac84d1453, type: 2}
+    FontAsset: {fileID: 0}

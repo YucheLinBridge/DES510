@@ -15,7 +15,7 @@ MonoBehaviour:
   Prefab: {fileID: 6212740415676551885, guid: 4ad7660bccb93b24ab7977f28f94455e, type: 3}
   spriteWidth: 100
   spriteHeight: 100
-  spacing: 0
+  spacing: -1
   LineSprites:
   - name: E
     sprite: {fileID: 21300000, guid: e4aeff5c7a84c544a9237623f0f91187, type: 3}
