@@ -1,3 +1,3 @@
-There's a key here, with tag attached.
-"All seemed dead, but one ran away."
+There's a key here, with tag attached. #img: key
+"All seemed dead, but one ran away." #img: key
 -> END
