@@ -6,9 +6,9 @@ using UnityEngine.Events;
 
 public class DialogueMgr:MonoBehaviour
 {
-    [SerializeField] private Transform dialogueParent,dialogueHUD,optionsParent;
+    [SerializeField] private Transform dialogueParent,dialogueHUD,optionsParent,imagesParent;
     [SerializeField] private Transform optionsMask;
-    [SerializeField] private GameObject dialogueObj,dialogueOption;
+    [SerializeField] private GameObject dialogueObj,dialogueOption,dialogueImage;
     [SerializeField] private CharactersData charactersData;
     [SerializeField] private OptionStyle optionStyle;
 
@@ -17,7 +17,7 @@ public class DialogueMgr:MonoBehaviour
 
     private DialogueObj dialogueObj_ins;
     private List<DialogueOption> dialogueOptions = new List<DialogueOption>();
-
+    private DialogueImage dialogueImage_ins;
 
     private Story story;
 
@@ -26,6 +26,7 @@ public class DialogueMgr:MonoBehaviour
     private const string LAYOUT_TAG = "layout";
     private const string EVENT_TAG = "event";
     private const string SPEED_TAG = "speed";
+    private const string IMG_TAG = "img";
 
     private bool finished = false;
     private bool auto=false;
@@ -208,6 +209,9 @@ public class DialogueMgr:MonoBehaviour
                     }
                     
                     break;
+                case IMG_TAG:
+                    dialogueImage_ins = createImage(tagValue);
+                        break;
                 default:
                     Debug.LogError($"Tag came in but is not currently being handled: {tag}");
                     break;
@@ -259,6 +263,13 @@ public class DialogueMgr:MonoBehaviour
         dialogueObj_ins?.DestroyDialogue();
         dialogueObj_ins = null;
 
+        if (dialogueImage_ins!=null)
+        {
+            dialogueImage_ins.DestroyImage();
+            dialogueImage_ins = null;
+        }
+
+
         optionsParent.gameObject.SetActive(false);
         optionsMask.gameObject.SetActive(false);
     }
@@ -297,6 +308,14 @@ public class DialogueMgr:MonoBehaviour
         handleTags(story.currentTags,obj);
         dialogueObj_ins=obj;
         return obj;
+    }
+
+    private DialogueImage createImage(string imgname)
+    {
+        var go= Instantiate(dialogueImage,dialogueParent);
+        var img=go.GetComponent<DialogueImage>();
+        img.Set(charactersData.GetImage(imgname));
+        return img;
     }
 
     public void AutoSwitcher()

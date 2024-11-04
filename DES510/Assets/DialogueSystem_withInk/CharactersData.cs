@@ -7,10 +7,16 @@ using TMPro;
 public class CharactersData : ScriptableObject
 {
     [SerializeField]private List<Character> characters = new List<Character>();
+    [SerializeField] private List<ImageData> images = new List<ImageData>();
 
     public Character GetCharacter(string name)
     {
         return characters.Find(c => c.Name == name);
+    }
+
+    public Sprite GetImage(string name)
+    {
+        return images.Find(c => c.Name == name).Sprite;
     }
 
 }
@@ -21,4 +27,10 @@ public class Character {
     public string Name_Shown;
     public GameObject SpeakerPrefab;
     public TMP_FontAsset FontAsset;
+}
+
+[System.Serializable]
+public class ImageData {
+    public string Name;
+    public Sprite Sprite;
 }
