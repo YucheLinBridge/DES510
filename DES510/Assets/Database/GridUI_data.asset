@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: GridUI_data
   m_EditorClassIdentifier: 
   Prefab: {fileID: 6212740415676551885, guid: 4ad7660bccb93b24ab7977f28f94455e, type: 3}
-  spriteWidth: 100
-  spriteHeight: 100
+  spriteWidth: 120
+  spriteHeight: 120
   spacing: -1
   LineSprites:
   - name: E

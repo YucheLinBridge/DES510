@@ -4576,6 +4576,7 @@ MonoBehaviour:
           m_CallState: 2
   canvas_map: {fileID: 1627081284}
   connection: {fileID: 1725152987}
+  DialogueEvents: []
 --- !u!4 &1292300886
 Transform:
   m_ObjectHideFlags: 0
@@ -4635,7 +4636,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.13333334
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 80d83ff6a640a1d49868b9fe3597c985, type: 2}
   m_BuildHeightMesh: 0
@@ -5819,6 +5820,18 @@ MonoBehaviour:
     Down:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 1292300885}
+          m_TargetAssemblyTypeName: SceneEventsMgr, DES510
+          m_MethodName: generate_puzzle
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 873996575}
           m_TargetAssemblyTypeName: MonoEventUI, DES510
           m_MethodName: ShowGame
@@ -5826,7 +5839,7 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
+            m_IntArgument: 1
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -7021,6 +7034,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas_Puzzle
       objectReference: {fileID: 0}
+    - target: {fileID: 3312051273651475582, guid: 74c1cd278a6495d488515cc4f5437b59,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -68
+      objectReference: {fileID: 0}
+    - target: {fileID: 3312051273651475582, guid: 74c1cd278a6495d488515cc4f5437b59,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -110
+      objectReference: {fileID: 0}
     - target: {fileID: 5050528523677764681, guid: 74c1cd278a6495d488515cc4f5437b59,
         type: 3}
       propertyPath: m_Pivot.x
@@ -7120,6 +7143,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861077083380327302, guid: 74c1cd278a6495d488515cc4f5437b59,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 780
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861077083380327302, guid: 74c1cd278a6495d488515cc4f5437b59,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 900
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
