@@ -9,6 +9,7 @@ public class CondictionInteraction : Interaction
 
     protected override void interact()
     {
+        //Debug.Log(this.name);
         CheckCondictions();
     }
 

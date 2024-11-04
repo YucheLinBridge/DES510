@@ -14,6 +14,7 @@ public class Interaction : MonoBehaviour
 
     public void OnClicked()
     {
+        Debug.Log($"Clicked on {this.name}");
         Player.Instance.Walk(stopPoint.position);
         Player.Instance.AddEventOnArrive(interact);
     }
