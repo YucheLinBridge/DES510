@@ -239,6 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d0946d0186e134bb815713556ee767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultMusic: 1
   musicPlayer: {fileID: 7017199961136541237}
   sFXsParent: {fileID: 6226198221265249363}
 --- !u!1001 &2876855889457944989

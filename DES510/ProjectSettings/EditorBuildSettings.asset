@@ -26,5 +26,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/travelling_3.unity
     guid: 25f55c90b44699142bca3b74aa98068b
+  - enabled: 1
+    path: Assets/Scenes/introduction.unity
+    guid: d095e16fc78ce93479f6aaa9e2dc6c87
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

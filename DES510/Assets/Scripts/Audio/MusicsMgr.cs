@@ -7,7 +7,8 @@ using DG.Tweening;
 
 public class MusicsMgr :IInitializable
 {
-    [SerializeField] private int defaultMusicIndex;
+    [Inject(Id = "defaultMusic")]
+    private int defaultMusicIndex;
 
     [Inject(Id = "music_player")]
     private AudioSource music_player;
@@ -45,6 +46,13 @@ public class MusicsMgr :IInitializable
             playing_index = index;
 
             Debug.Log($"Change music to index={index}");
+        }
+    }
+
+    public void Stop()
+    {
+        if (playing_index != -1) {
+            DOTween.To(() => music_player.volume, x => music_player.volume = x, 0, setting.TIME_OUT).OnComplete(music_player.Stop);
         }
     }
 }

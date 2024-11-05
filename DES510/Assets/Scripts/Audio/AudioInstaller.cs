@@ -4,6 +4,8 @@ using Zenject;
 
 public class AudioInstaller : MonoInstaller
 {
+
+    [SerializeField] private int defaultMusic;
     [SerializeField] private AudioSource musicPlayer;
     [SerializeField] private Transform sFXsParent;
 
@@ -20,6 +22,7 @@ public class AudioInstaller : MonoInstaller
     private void bindInstance()
     {
         Container.BindInstance(musicPlayer).WithId("music_player");
+        Container.BindInstance(defaultMusic).WithId("defaultMusic");
     }
 
     private void bindScripts()

@@ -34,6 +34,8 @@ public class DialogueMgr:MonoBehaviour
 
     private UnityEvent onLineEnd=new UnityEvent();
 
+    private GameObject dialogueObj_custom = null;
+
     public static DialogueMgr Instance;
     private void Awake()
     {
@@ -44,7 +46,7 @@ public class DialogueMgr:MonoBehaviour
     private void showDialogueUI(bool flag)
     {
         dialogueParent.gameObject.SetActive(flag);
-        dialogueHUD.gameObject.SetActive(flag);
+        //dialogueHUD.gameObject.SetActive(flag);
     }
 
     public void StartStory(TextAsset inkJsonAsset)
@@ -54,6 +56,18 @@ public class DialogueMgr:MonoBehaviour
         story = new Story(inkJsonAsset.text);
         OnDialogueStart?.Invoke();
         finished=false;
+        refreshView();
+    }
+
+
+    public void StartStory(GameObject customDialogue,TextAsset inkJsonAsset)
+    {
+        dialogueObj_custom = customDialogue;
+        showDialogueUI(true);
+        OnDialogueStart?.Invoke();
+        story = new Story(inkJsonAsset.text);
+        OnDialogueStart?.Invoke();
+        finished = false;
         refreshView();
     }
 
@@ -99,12 +113,19 @@ public class DialogueMgr:MonoBehaviour
         }
         else
         {
-            OnDialogueEnd?.Invoke();
-            OnDialogueEnd?.RemoveAllListeners();
-            Debug.Log("Dialogue End");
-            showDialogueUI(false);
-            removeImg();
+            storyEnd();
         }
+    }
+
+    private void storyEnd()
+    {
+        OnDialogueEnd?.Invoke();
+        OnDialogueEnd?.RemoveAllListeners();
+        Debug.Log("Story End");
+        showDialogueUI(false);
+        removeImg();
+        dialogueObj_custom = null;
+        auto = false;
     }
 
     IEnumerator waitForDialogueEnd(DialogueObj target)
@@ -318,7 +339,7 @@ public class DialogueMgr:MonoBehaviour
     private DialogueObj createContentView(string text)
     {
         onLineEnd.RemoveAllListeners();
-        var go = Instantiate(dialogueObj,dialogueParent);
+        var go = dialogueObj_custom? Instantiate(dialogueObj_custom, dialogueParent) : Instantiate(dialogueObj,dialogueParent);
         var obj=go.GetComponent<DialogueObj>();
         obj.Show(text,auto);
         handleTags(story.currentTags,obj);
@@ -339,6 +360,13 @@ public class DialogueMgr:MonoBehaviour
         auto = !auto;
         dialogueObj_ins.SetAuto(auto);
     }
+
+    public void SetAuto()
+    {
+        auto =true;
+        dialogueObj_ins.SetAuto(true);
+    }
+
 
     public enum OptionStyle {
         None,
