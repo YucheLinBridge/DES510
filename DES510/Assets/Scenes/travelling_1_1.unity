@@ -1280,9 +1280,9 @@ MonoBehaviour:
     type: 3}
   track_direction: 1
   blocks:
-  - {fileID: 9021606670791593293, guid: 308f62c25c5189b40b9d42d26e47926a, type: 3}
-  - {fileID: 7449510904047916715, guid: ae88175dbe3907a4a9bc88ea640a33e2, type: 3}
-  - {fileID: 7948600408528612011, guid: dc75a53fe115c7c40a2d678804afb946, type: 3}
+  - {fileID: 9021606670791593293, guid: b7c213c9461704e41bbe8c7182c0e5cb, type: 3}
+  - {fileID: 7449510904047916715, guid: 20cfd1d16a25e9b4ab58bd3052693edc, type: 3}
+  - {fileID: 7948600408528612011, guid: 44afac5b1afa87545a233fbebf434fff, type: 3}
   blocks_parent: {fileID: 1042139021}
   x_offset: 200
   x_pedding: 59.05
