@@ -27,6 +27,7 @@ public class DialogueMgr:MonoBehaviour
     private const string EVENT_TAG = "event";
     private const string SPEED_TAG = "speed";
     private const string IMG_TAG = "img";
+    private const string IMGOFF_TAG = "imgoff";
 
     private bool finished = false;
     private bool auto=false;
@@ -102,6 +103,7 @@ public class DialogueMgr:MonoBehaviour
             OnDialogueEnd?.RemoveAllListeners();
             Debug.Log("Dialogue End");
             showDialogueUI(false);
+            removeImg();
         }
     }
 
@@ -157,13 +159,21 @@ public class DialogueMgr:MonoBehaviour
 
         foreach (string tag in currentTags) {
             string[] splitTag = tag.Split(':');
-            if (splitTag.Length!=2)
+            string tagKey=null;
+            string tagValue=null;
+            if (splitTag.Length==1) {
+                tagKey = splitTag[0].Trim();
+            }
+            else if (splitTag.Length==2)
+            {
+                tagKey = splitTag[0].Trim();
+                tagValue = splitTag[1].Trim();
+            }else if (splitTag.Length!=2)
             {
                 Debug.LogError($"Tag could not be appropriately parsed: {tag}");
                 break;
             }
-            string tagKey=splitTag[0].Trim();
-            string tagValue = splitTag[1].Trim();
+            
 
             switch (tagKey)
             {
@@ -212,6 +222,9 @@ public class DialogueMgr:MonoBehaviour
                 case IMG_TAG:
                     dialogueImage_ins = createImage(tagValue);
                         break;
+                case IMGOFF_TAG:
+                    removeImg();
+                    break;
                 default:
                     Debug.LogError($"Tag came in but is not currently being handled: {tag}");
                     break;
@@ -263,15 +276,18 @@ public class DialogueMgr:MonoBehaviour
         dialogueObj_ins?.DestroyDialogue();
         dialogueObj_ins = null;
 
-        if (dialogueImage_ins!=null)
+
+        optionsParent.gameObject.SetActive(false);
+        optionsMask.gameObject.SetActive(false);
+    }
+
+    private void removeImg()
+    {
+        if (dialogueImage_ins != null)
         {
             dialogueImage_ins.DestroyImage();
             dialogueImage_ins = null;
         }
-
-
-        optionsParent.gameObject.SetActive(false);
-        optionsMask.gameObject.SetActive(false);
     }
 
     private void onClickChoiceButton(Choice choice)
