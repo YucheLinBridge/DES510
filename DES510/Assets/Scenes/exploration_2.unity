@@ -1428,9 +1428,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea5e49f3e4ab69645a41ca0af9024bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartInBeginning: 0
   label: 
   DialogueData: {fileID: 4900000, guid: 7bb15df34e9a4314e901799cc1b3b2ed, type: 3}
+  OnStart:
+    m_PersistentCalls:
+      m_Calls: []
   OnEnd: []
+  ForceAuto: 0
+  CustomDialogue: {fileID: 0}
 --- !u!1 &193189667
 GameObject:
   m_ObjectHideFlags: 0
@@ -1977,9 +1983,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea5e49f3e4ab69645a41ca0af9024bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartInBeginning: 0
   label: Ready to go
   DialogueData: {fileID: 4900000, guid: a25705cc15fa50340bcc3ea3ac7d1c23, type: 3}
+  OnStart:
+    m_PersistentCalls:
+      m_Calls: []
   OnEnd: []
+  ForceAuto: 0
+  CustomDialogue: {fileID: 0}
 --- !u!1 &306382712
 GameObject:
   m_ObjectHideFlags: 0
@@ -2501,8 +2513,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea5e49f3e4ab69645a41ca0af9024bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartInBeginning: 0
   label: Turn on terminal
   DialogueData: {fileID: 4900000, guid: dbbfae8b8ee3c8a4498eb6821c0b8ffe, type: 3}
+  OnStart:
+    m_PersistentCalls:
+      m_Calls: []
   OnEnd:
   - m_PersistentCalls:
       m_Calls:
@@ -2518,6 +2534,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  ForceAuto: 0
+  CustomDialogue: {fileID: 0}
 --- !u!1001 &458142565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2750,9 +2768,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea5e49f3e4ab69645a41ca0af9024bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartInBeginning: 0
   label: 
   DialogueData: {fileID: 4900000, guid: 3896fbb253b71144e8d1b130cb7c72ff, type: 3}
+  OnStart:
+    m_PersistentCalls:
+      m_Calls: []
   OnEnd: []
+  ForceAuto: 0
+  CustomDialogue: {fileID: 0}
 --- !u!1 &490685338
 GameObject:
   m_ObjectHideFlags: 0
@@ -5258,9 +5282,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea5e49f3e4ab69645a41ca0af9024bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartInBeginning: 0
   label: 
   DialogueData: {fileID: 4900000, guid: fe572bd2b3d2d344b802ab5b1d574348, type: 3}
+  OnStart:
+    m_PersistentCalls:
+      m_Calls: []
   OnEnd: []
+  ForceAuto: 0
+  CustomDialogue: {fileID: 0}
 --- !u!1001 &931430415
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6219,6 +6249,73 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1023726447}
   m_CullTransparentMesh: 1
+--- !u!1 &1047086571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1047086572}
+  - component: {fileID: 1047086573}
+  m_Layer: 7
+  m_Name: Dialogue_0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1047086572
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047086571}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2071885949}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1047086573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047086571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea5e49f3e4ab69645a41ca0af9024bc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartInBeginning: 0
+  label: Not yet
+  DialogueData: {fileID: 4900000, guid: 7668a0a1226889d45b7661cc3a981768, type: 3}
+  OnStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEnd:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Player, DES510
+        m_MethodName: SetPlayerDataBoolTrue
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: YILE_1
+          m_BoolArgument: 0
+        m_CallState: 2
+  ForceAuto: 0
+  CustomDialogue: {fileID: 0}
 --- !u!1 &1049367750
 GameObject:
   m_ObjectHideFlags: 3
@@ -6531,9 +6628,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea5e49f3e4ab69645a41ca0af9024bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartInBeginning: 0
   label: 
   DialogueData: {fileID: 4900000, guid: 56d58fcaeac3c564cb81fc23b00bd268, type: 3}
+  OnStart:
+    m_PersistentCalls:
+      m_Calls: []
   OnEnd: []
+  ForceAuto: 0
+  CustomDialogue: {fileID: 0}
 --- !u!1001 &1087871990
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8458,9 +8561,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea5e49f3e4ab69645a41ca0af9024bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartInBeginning: 0
   label: 
   DialogueData: {fileID: 4900000, guid: 8804095b05a3a5143892cf047a888536, type: 3}
+  OnStart:
+    m_PersistentCalls:
+      m_Calls: []
   OnEnd: []
+  ForceAuto: 0
+  CustomDialogue: {fileID: 0}
 --- !u!1 &1311852121
 GameObject:
   m_ObjectHideFlags: 0
@@ -9863,6 +9972,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1047086573}
+        m_TargetAssemblyTypeName: DialogueOnScene, DES510
+        m_MethodName: StartStory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   FadeOutTime: 2
   FadeOutAlpha_start: 0
   FadeOutAlpha_end: 1
@@ -10185,7 +10306,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b7641da6d54f2fa47b97033920ad69c8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 58e537c85f3758b428ab95677abec752, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -10989,8 +11110,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea5e49f3e4ab69645a41ca0af9024bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartInBeginning: 0
   label: Not yet
   DialogueData: {fileID: 4900000, guid: 2f7316f83048bdb409ad5b30194f3ad8, type: 3}
+  OnStart:
+    m_PersistentCalls:
+      m_Calls: []
   OnEnd:
   - m_PersistentCalls:
       m_Calls:
@@ -11006,6 +11131,8 @@ MonoBehaviour:
           m_StringArgument: YILE_1
           m_BoolArgument: 0
         m_CallState: 2
+  ForceAuto: 0
+  CustomDialogue: {fileID: 0}
 --- !u!1 &1750817861
 GameObject:
   m_ObjectHideFlags: 0
@@ -11223,9 +11350,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea5e49f3e4ab69645a41ca0af9024bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartInBeginning: 0
   label: 
   DialogueData: {fileID: 4900000, guid: b0f6af4a134bb9747aae5f6d704d749e, type: 3}
+  OnStart:
+    m_PersistentCalls:
+      m_Calls: []
   OnEnd: []
+  ForceAuto: 0
+  CustomDialogue: {fileID: 0}
 --- !u!1 &1759703367
 GameObject:
   m_ObjectHideFlags: 0
@@ -12140,9 +12273,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea5e49f3e4ab69645a41ca0af9024bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartInBeginning: 0
   label: 
   DialogueData: {fileID: 4900000, guid: 9ed60000fb321d041a7c1c6268267630, type: 3}
+  OnStart:
+    m_PersistentCalls:
+      m_Calls: []
   OnEnd: []
+  ForceAuto: 0
+  CustomDialogue: {fileID: 0}
 --- !u!1 &1886907790
 GameObject:
   m_ObjectHideFlags: 0
@@ -12857,7 +12996,7 @@ GameObject:
   - component: {fileID: 2071885952}
   - component: {fileID: 2071885950}
   m_Layer: 7
-  m_Name: Mike
+  m_Name: YingYue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12878,6 +13017,7 @@ Transform:
   m_Children:
   - {fileID: 1608241237}
   - {fileID: 540594187}
+  - {fileID: 1047086572}
   - {fileID: 1749306161}
   - {fileID: 299281138}
   m_Father: {fileID: 1759703368}

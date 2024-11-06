@@ -135,6 +135,10 @@ public class SceneEventsMgr : DialogueEventsMgr
         musicMgr.Play(index);
     }
 
+    public void StopMusic()
+    {
+        musicMgr.Stop();
+    }
     public void PlaySFX(int index)
     {
         sfxMgr.PlaySFX(index);

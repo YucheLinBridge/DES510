@@ -27,11 +27,14 @@ public class DialogueMgr:MonoBehaviour
     private const string EVENT_TAG = "event";
     private const string SPEED_TAG = "speed";
     private const string IMG_TAG = "img";
+    private const string IMGOFF_TAG = "imgoff";
 
     private bool finished = false;
     private bool auto=false;
 
     private UnityEvent onLineEnd=new UnityEvent();
+
+    private GameObject dialogueObj_custom = null;
 
     public static DialogueMgr Instance;
     private void Awake()
@@ -43,7 +46,7 @@ public class DialogueMgr:MonoBehaviour
     private void showDialogueUI(bool flag)
     {
         dialogueParent.gameObject.SetActive(flag);
-        dialogueHUD.gameObject.SetActive(flag);
+        //dialogueHUD.gameObject.SetActive(flag);
     }
 
     public void StartStory(TextAsset inkJsonAsset)
@@ -53,6 +56,18 @@ public class DialogueMgr:MonoBehaviour
         story = new Story(inkJsonAsset.text);
         OnDialogueStart?.Invoke();
         finished=false;
+        refreshView();
+    }
+
+
+    public void StartStory(GameObject customDialogue,TextAsset inkJsonAsset)
+    {
+        dialogueObj_custom = customDialogue;
+        showDialogueUI(true);
+        OnDialogueStart?.Invoke();
+        story = new Story(inkJsonAsset.text);
+        OnDialogueStart?.Invoke();
+        finished = false;
         refreshView();
     }
 
@@ -98,11 +113,19 @@ public class DialogueMgr:MonoBehaviour
         }
         else
         {
-            OnDialogueEnd?.Invoke();
-            OnDialogueEnd?.RemoveAllListeners();
-            Debug.Log("Dialogue End");
-            showDialogueUI(false);
+            storyEnd();
         }
+    }
+
+    private void storyEnd()
+    {
+        OnDialogueEnd?.Invoke();
+        OnDialogueEnd?.RemoveAllListeners();
+        Debug.Log("Story End");
+        showDialogueUI(false);
+        removeImg();
+        dialogueObj_custom = null;
+        auto = false;
     }
 
     IEnumerator waitForDialogueEnd(DialogueObj target)
@@ -157,13 +180,21 @@ public class DialogueMgr:MonoBehaviour
 
         foreach (string tag in currentTags) {
             string[] splitTag = tag.Split(':');
-            if (splitTag.Length!=2)
+            string tagKey=null;
+            string tagValue=null;
+            if (splitTag.Length==1) {
+                tagKey = splitTag[0].Trim();
+            }
+            else if (splitTag.Length==2)
+            {
+                tagKey = splitTag[0].Trim();
+                tagValue = splitTag[1].Trim();
+            }else if (splitTag.Length!=2)
             {
                 Debug.LogError($"Tag could not be appropriately parsed: {tag}");
                 break;
             }
-            string tagKey=splitTag[0].Trim();
-            string tagValue = splitTag[1].Trim();
+            
 
             switch (tagKey)
             {
@@ -212,6 +243,9 @@ public class DialogueMgr:MonoBehaviour
                 case IMG_TAG:
                     dialogueImage_ins = createImage(tagValue);
                         break;
+                case IMGOFF_TAG:
+                    removeImg();
+                    break;
                 default:
                     Debug.LogError($"Tag came in but is not currently being handled: {tag}");
                     break;
@@ -263,15 +297,18 @@ public class DialogueMgr:MonoBehaviour
         dialogueObj_ins?.DestroyDialogue();
         dialogueObj_ins = null;
 
-        if (dialogueImage_ins!=null)
+
+        optionsParent.gameObject.SetActive(false);
+        optionsMask.gameObject.SetActive(false);
+    }
+
+    private void removeImg()
+    {
+        if (dialogueImage_ins != null)
         {
             dialogueImage_ins.DestroyImage();
             dialogueImage_ins = null;
         }
-
-
-        optionsParent.gameObject.SetActive(false);
-        optionsMask.gameObject.SetActive(false);
     }
 
     private void onClickChoiceButton(Choice choice)
@@ -302,7 +339,7 @@ public class DialogueMgr:MonoBehaviour
     private DialogueObj createContentView(string text)
     {
         onLineEnd.RemoveAllListeners();
-        var go = Instantiate(dialogueObj,dialogueParent);
+        var go = dialogueObj_custom? Instantiate(dialogueObj_custom, dialogueParent) : Instantiate(dialogueObj,dialogueParent);
         var obj=go.GetComponent<DialogueObj>();
         obj.Show(text,auto);
         handleTags(story.currentTags,obj);
@@ -323,6 +360,13 @@ public class DialogueMgr:MonoBehaviour
         auto = !auto;
         dialogueObj_ins.SetAuto(auto);
     }
+
+    public void SetAuto()
+    {
+        auto =true;
+        dialogueObj_ins.SetAuto(true);
+    }
+
 
     public enum OptionStyle {
         None,

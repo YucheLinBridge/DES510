@@ -66,10 +66,11 @@ public class DialogueObj : MonoBehaviour
     IEnumerator Type()
     {
         typing=true;
-        for (int i=0;i< texttoshow.Length;i++)
+        txt_Content.text = texttoshow;
+        txt_Content.maxVisibleCharacters = 0;
+        for (int i=0;i<= texttoshow.Length;i++)
         {
-            txt_Content.text = texttoshow.Substring(0,i+1);
-
+            txt_Content.maxVisibleCharacters++;
             if (typing)
             {
                 yield return new WaitForSeconds(1 / TypingSpeed);

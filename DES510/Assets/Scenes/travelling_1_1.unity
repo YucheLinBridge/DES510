@@ -1114,7 +1114,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: -10
   far clip plane: 15000
   field of view: 60
   orthographic: 1
@@ -1474,7 +1474,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 8.3
-    NearClipPlane: 0.3
+    NearClipPlane: -10
     FarClipPlane: 15000
     Dutch: 0
     ModeOverride: 0
@@ -1570,8 +1570,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea5e49f3e4ab69645a41ca0af9024bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartInBeginning: 0
   label: Conversation on the train
   DialogueData: {fileID: 4900000, guid: 3624e407601233a4fba8252c2a8d7c3f, type: 3}
+  OnStart:
+    m_PersistentCalls:
+      m_Calls: []
   OnEnd:
   - m_PersistentCalls:
       m_Calls:
@@ -1587,6 +1591,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  ForceAuto: 0
+  CustomDialogue: {fileID: 0}
 --- !u!114 &1122939179
 MonoBehaviour:
   m_ObjectHideFlags: 0

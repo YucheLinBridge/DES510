@@ -9,7 +9,6 @@ public class GridUI : MonoBehaviour
 {
     private int x, y;
     [SerializeField] private Image line,line_bg, node,node_bg;
-    [SerializeField] private Color line_active, line_inactive, node_active, node_inactive;
 
 
     [Inject]
@@ -77,8 +76,8 @@ public class GridUI : MonoBehaviour
 
     public void Activate(bool flag)
     {
-        line_bg.color = flag ? line_active : line_inactive;
-        node_bg.color = flag ? node_active : node_inactive;
+        line_bg.color = flag ? database.line_active : database.line_inactive;
+        node_bg.color = flag ? database.node_active : database.node_inactive;
     }
 
     private void rotateTo(int dir)

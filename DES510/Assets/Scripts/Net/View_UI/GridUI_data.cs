@@ -11,6 +11,7 @@ public class GridUI_data : ScriptableObjectInstaller<GridUI_data>
     [SerializeField] private float spriteWidth, spriteHeight, spacing;
     [SerializeField] private List<ArtData> LineSprites;
     [SerializeField] private Sprite Node, Main;
+    public Color line_active, line_inactive, node_active, node_inactive;
 
     public Sprite NODE => Node;
     public Sprite MAIN => Main;
