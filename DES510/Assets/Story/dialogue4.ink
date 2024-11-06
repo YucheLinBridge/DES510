@@ -1,5 +1,5 @@
 'Hi! I didn't mean to startle you. I'm Yile, you're on that train outside, right?' #speaker: Yile #layout: -1 
-The masked figure pauses for a second. #speaker: Yile #layout: -1
+<i>The masked figure stops to think, realising that....</i> #speaker: Yile #layout: -1
 'I startled a ghost... huh.' #speaker: Yile #layout: -1
 *'I'm Viro, the train's conductor.' #speaker: Vivian #layout: 1
 'Ha! Great to meet you Viro!' #speaker: Yile #layout: -1
