@@ -6293,7 +6293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea5e49f3e4ab69645a41ca0af9024bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartInBeginning: 1
+  StartInBeginning: 0
   label: Not yet
   DialogueData: {fileID: 4900000, guid: 7668a0a1226889d45b7661cc3a981768, type: 3}
   OnStart:
@@ -9964,6 +9964,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: SceneEventsMgr, DES510
         m_MethodName: PlayMusic
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1047086573}
+        m_TargetAssemblyTypeName: DialogueOnScene, DES510
+        m_MethodName: StartStory
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

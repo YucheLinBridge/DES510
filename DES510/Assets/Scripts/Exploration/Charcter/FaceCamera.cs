@@ -6,7 +6,7 @@ public class FaceCamera : MonoBehaviour
 {
     // Start is called before the first frame update
     public axis Axis;
-
+    [SerializeField] private Camera SpecificCamera;
 
     private static Camera _camera;
 
@@ -24,13 +24,27 @@ public class FaceCamera : MonoBehaviour
         switch (Axis)
         {
             case axis.x:
-                transform.right = -_camera.transform.forward;
+                if (SpecificCamera) {
+                    transform.right = -SpecificCamera.transform.forward;
+                } else {
+                    transform.right = -_camera.transform.forward;
+                }
+                
                 break;
             case axis.y:
-                transform.up = -_camera.transform.forward;
+                if (SpecificCamera) {
+                    transform.up = -SpecificCamera.transform.forward;
+                } else {
+                    transform.up = -_camera.transform.forward;
+                }
                 break;
             case axis.z:
-                transform.forward = -_camera.transform.forward;
+                if (SpecificCamera) {
+                    transform.forward = -SpecificCamera.transform.forward;
+                } else {
+                    transform.forward = -_camera.transform.forward;
+                }
+                
                 break;
             default:
                 break;
