@@ -1125,7 +1125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scriptableObjectInstallers:
-  - {fileID: 11400000, guid: d31d5a8ed5342a84d92e7a0b3a3a0891, type: 2}
+  - {fileID: 11400000, guid: b69409a2b93b4fa4c9dedde0533cf0b6, type: 2}
   - {fileID: 11400000, guid: 5a1783f7cb76b7e4b83e7e09bc77c6c1, type: 2}
   _monoInstallers:
   - {fileID: 1039280223}
@@ -1188,8 +1188,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dccbbca9609f56418fc84314017b947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GridPrefab: {fileID: 6212740415676551885, guid: 4ad7660bccb93b24ab7977f28f94455e,
-    type: 3}
 --- !u!1 &1335535132
 GameObject:
   m_ObjectHideFlags: 0
@@ -1308,38 +1306,53 @@ MonoBehaviour:
   x_offset: 1
   y_offset: 1
   spacing: 0
-  currentIndex: 0
+  currentIndex: 4
   LineSprites:
   - name: E
     sprite: {fileID: 21300000, guid: 5a3b9cf507e3065419ad969b9cf34294, type: 3}
+    bg: {fileID: 0}
   - name: EW
     sprite: {fileID: 21300000, guid: 0e2f4ff6a1dab0849ad6ea983e908586, type: 3}
+    bg: {fileID: 0}
   - name: N
     sprite: {fileID: 21300000, guid: 7dec7b5a3a8d6fd45b83ab54a3e188fa, type: 3}
+    bg: {fileID: 0}
   - name: NE
     sprite: {fileID: 21300000, guid: ed16805df98fdba48a992ac9b6b17e8e, type: 3}
+    bg: {fileID: 0}
   - name: NEW
     sprite: {fileID: 21300000, guid: 1eb51b994bbe77345a368633c1769fb7, type: 3}
+    bg: {fileID: 0}
   - name: NS
     sprite: {fileID: 21300000, guid: c0c6f800e3dfd0d46b9e808c03b5b2fd, type: 3}
+    bg: {fileID: 0}
   - name: NSE
     sprite: {fileID: 21300000, guid: 28b6b2658fb553044998ed696ed46188, type: 3}
+    bg: {fileID: 0}
   - name: NSEW
     sprite: {fileID: 21300000, guid: e0cbdd5cc09f3774a8fd70e3ba3746c7, type: 3}
+    bg: {fileID: 0}
   - name: NSW
     sprite: {fileID: 21300000, guid: 8f2d8857946d42f45aff6f70a2d0762b, type: 3}
+    bg: {fileID: 0}
   - name: NW
     sprite: {fileID: 21300000, guid: db98db9c1e7b7ef4c98e25a8ce9611d3, type: 3}
+    bg: {fileID: 0}
   - name: S
     sprite: {fileID: 21300000, guid: 06251813f5778494a9a4885571110db5, type: 3}
+    bg: {fileID: 0}
   - name: SE
     sprite: {fileID: 21300000, guid: 86277c7a5b0482b4294521cd55beb89d, type: 3}
+    bg: {fileID: 0}
   - name: SEW
     sprite: {fileID: 21300000, guid: 0405b345b071ef14faddcc2fe9661801, type: 3}
+    bg: {fileID: 0}
   - name: SW
     sprite: {fileID: 21300000, guid: c831d7e39cc0c3e49887f33c8595bc9e, type: 3}
+    bg: {fileID: 0}
   - name: W
     sprite: {fileID: 21300000, guid: 383bd61951738cd4f87a0e60759b08e2, type: 3}
+    bg: {fileID: 0}
   Node: {fileID: 21300000, guid: f49b7b10a20309b44a916cb8e18372e8, type: 3}
   Main: {fileID: 21300000, guid: 3f0341fa3fd77f04ea8b4ff7ee63431d, type: 3}
 --- !u!114 &1405373573
