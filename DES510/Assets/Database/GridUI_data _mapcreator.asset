@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 601b077f97c66fa488826bc302b8484b, type: 3}
+  m_Name: GridUI_data _mapcreator
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 6212740415676551885, guid: 4a4ef8bf57dfbd242b60021447a449e6, type: 3}
+  spriteWidth: 100
+  spriteHeight: 100
+  spacing: -1
+  LineSprites:
+  - name: E
+    sprite: {fileID: 21300000, guid: e4aeff5c7a84c544a9237623f0f91187, type: 3}
+    bg: {fileID: 0}
+  - name: EW
+    sprite: {fileID: 21300000, guid: 13553f311856dcb448c564e79e6d89fa, type: 3}
+    bg: {fileID: 21300000, guid: 003398d7daeca3442b4d2cb392d7d813, type: 3}
+  - name: N
+    sprite: {fileID: 21300000, guid: c891fd8af075253489cc314720f059d8, type: 3}
+    bg: {fileID: 0}
+  - name: NE
+    sprite: {fileID: 21300000, guid: 2f67365d6d0d53349858e66445e8f71f, type: 3}
+    bg: {fileID: 21300000, guid: b0e405415bd0708488392945c3aa370f, type: 3}
+  - name: NEW
+    sprite: {fileID: 21300000, guid: 4c5c1ae9fbc2de84b9f5618502c274ee, type: 3}
+    bg: {fileID: 21300000, guid: 860f39a395f27844b95a0e2a01005149, type: 3}
+  - name: NS
+    sprite: {fileID: 21300000, guid: 501fc4ac38e16394dbd24a24d8571980, type: 3}
+    bg: {fileID: 21300000, guid: 860f39a395f27844b95a0e2a01005149, type: 3}
+  - name: NSE
+    sprite: {fileID: 21300000, guid: 06563ceff323a7c45856d3613ff3895e, type: 3}
+    bg: {fileID: 21300000, guid: 860f39a395f27844b95a0e2a01005149, type: 3}
+  - name: NSEW
+    sprite: {fileID: 21300000, guid: ddc6e0ccff132fb40a56b0e751a19b5f, type: 3}
+    bg: {fileID: 21300000, guid: f5a59a13566abb9418e4c75bb122b5bd, type: 3}
+  - name: NSW
+    sprite: {fileID: 21300000, guid: adf112297bfdfee42871d92e4964df07, type: 3}
+    bg: {fileID: 21300000, guid: 003398d7daeca3442b4d2cb392d7d813, type: 3}
+  - name: NW
+    sprite: {fileID: 21300000, guid: d1643f2c13c73e94c93623baa6e50b70, type: 3}
+    bg: {fileID: 21300000, guid: 2ba4bfa9ef926ce459dcef70fe07556c, type: 3}
+  - name: S
+    sprite: {fileID: 21300000, guid: 1e12c7fd185c51d46a847d3389bffdff, type: 3}
+    bg: {fileID: 0}
+  - name: SE
+    sprite: {fileID: 21300000, guid: 5024d139ef858bb4d9331848caef1c01, type: 3}
+    bg: {fileID: 21300000, guid: d729674ac6e56ec45ac151e6c7c6378c, type: 3}
+  - name: SEW
+    sprite: {fileID: 21300000, guid: ffc5e2ac70f76924c9c560db4975ba3f, type: 3}
+    bg: {fileID: 21300000, guid: 860f39a395f27844b95a0e2a01005149, type: 3}
+  - name: SW
+    sprite: {fileID: 21300000, guid: 165728e8843b6aa4c8e4ed8b4d5d1a85, type: 3}
+    bg: {fileID: 21300000, guid: aa5cc740149f8be4abd66fe4599f75ed, type: 3}
+  - name: W
+    sprite: {fileID: 21300000, guid: 7b6465cbd8b561f4589bd4b953bb9de5, type: 3}
+    bg: {fileID: 0}
+  Node: {fileID: 21300000, guid: f461f453110d5144d981cee731add687, type: 3}
+  Main: {fileID: 21300000, guid: 2bf7e7a5459166b48b5bfb81fc6e2c36, type: 3}
+  line_active: {r: 0.25943398, g: 0.89418566, b: 1, a: 1}
+  line_inactive: {r: 1, g: 1, b: 1, a: 1}
+  node_active: {r: 0.25882354, g: 0.89411765, b: 1, a: 1}
+  node_inactive: {r: 1, g: 1, b: 1, a: 1}

@@ -21,9 +21,9 @@
 -> Section3
 *'I woke up in the woods...' #speaker: Vivian #layout: 1
 'Interesting. I assume hatso over these is the same?' #speaker: Yile #layout: -1
-Mico shortly nods, from the corner of the room. #speaker: Mike #layout: -1
+<i>Mico shortly nods, from the corner of the room.</i> #speaker: Mike #layout: -1
 'So, are we dreaming? Prisoners? Dead? Punished?' #speaker: Yile #layout: -1
-An immediate silence follows Yile's question. #speaker: Yile #layout: -1
+<i>An immediate silence follows Yile's question.</i> #speaker: Yile #layout: -1
 -> Section3
 
 ===Section3===
