@@ -1273,7 +1273,7 @@ MonoBehaviour:
         m_CallState: 2
   generateTracks: 1
   trackParent: {fileID: 642758663}
-  spacing: 13
+  spacing: 12.3
   start_pending: 20
   end_pending: 0
   trackPrefab: {fileID: 6514967385302851826, guid: 869b40a558416024189fdd7245dbea64,
