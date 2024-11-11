@@ -267,13 +267,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 203844586}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.47792223, y: 0.37426162, z: -0.23568511, w: 0.75892764}
-  m_LocalPosition: {x: -1.163988, y: 6.06223, z: -0.8931594}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1209956246}
-  m_LocalEulerAnglesHint: {x: 64.4, y: 52.5, z: 0}
+  m_LocalEulerAnglesHint: {x: 64.4, y: 119.966, z: 0}
 --- !u!1 &240744672
 GameObject:
   m_ObjectHideFlags: 0
@@ -1273,7 +1271,7 @@ MonoBehaviour:
         m_CallState: 2
   generateTracks: 1
   trackParent: {fileID: 642758663}
-  spacing: 13
+  spacing: 12.3
   start_pending: 20
   end_pending: 0
   trackPrefab: {fileID: 6514967385302851826, guid: 869b40a558416024189fdd7245dbea64,
