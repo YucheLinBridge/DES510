@@ -31,6 +31,9 @@ public class SceneEventsMgr : DialogueEventsMgr
     [Inject]
     private SFXMgr sfxMgr;
 
+    [Inject]
+    private CurvedWorldController curvedWorldController;
+
     private void Awake()
     {
         Instance = this;
@@ -135,6 +138,11 @@ public class SceneEventsMgr : DialogueEventsMgr
         musicMgr.Play(index);
     }
 
+    public void PlayMusicImmedialtely(int index)
+    {
+        musicMgr.PlayImmediately(index);
+    }
+
     public void StopMusic()
     {
         musicMgr.Stop();
@@ -142,6 +150,11 @@ public class SceneEventsMgr : DialogueEventsMgr
     public void PlaySFX(int index)
     {
         sfxMgr.PlaySFX(index);
+    }
+
+    public void BendWorld(string newsetting)
+    {
+        curvedWorldController.Change(newsetting);
     }
 
 }

@@ -49,6 +49,25 @@ public class MusicsMgr :IInitializable
         }
     }
 
+    public void PlayImmediately(int index) {
+        if (playing_index == -1)
+        {
+            music_player.clip = setting.GetMusic(index);
+            music_player.Play();
+            music_player.volume = 1;
+            playing_index = index;
+        }
+        else
+        {
+            music_player.clip = setting.GetMusic(index);
+            music_player.Play();
+            premusic = playing_index;
+            playing_index = index;
+
+            Debug.Log($"Change music to index={index}");
+        }
+    }
+
     public void Stop()
     {
         if (playing_index != -1) {
