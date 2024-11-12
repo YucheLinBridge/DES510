@@ -204,7 +204,7 @@ public class TrainTravelMgr : MonoBehaviour
         {
             trackLength += Mathf.Abs(spacing);
             var go=Instantiate(trackPrefab,trackParent);
-            go.transform.position = Vector3.LerpUnclamped(start.position, end.position, trackLength / distance);
+            go.transform.position = Vector3.LerpUnclamped(start.position+.1f*Vector3.up, end.position + .1f * Vector3.up, trackLength / distance);
            
             switch (track_direction)
             {

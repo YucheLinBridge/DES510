@@ -14,16 +14,26 @@ public class CurvedWorldController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        changeImmediately(defaultSetting);
+        ChangeImmediately(defaultSetting);
     }
 
-    private void changeImmediately(Vector2 newSetting)
+    public void ChangeImmediately(Vector2 newSetting)
     {
         foreach (var item in materials) {
             item.SetFloat("_Sideways_Strength",newSetting.x);
             item.SetFloat("_Backwards_Strength", newSetting.y);
         }
         origin = newSetting;
+    }
+    public void ChangeImmediately(string str_newsetting)
+    {
+        var strlst = str_newsetting.Split(',');
+        if (strlst.Length != 2)
+        {
+            Debug.LogError("There must be two params");
+            return;
+        }
+        ChangeImmediately(new Vector2(float.Parse(strlst[0]), float.Parse(strlst[1])));
     }
 
     public void Change(string str_newsetting)

@@ -9,6 +9,8 @@ using Coroutine_Zenject;
 
 public class SceneEventsMgr : DialogueEventsMgr
 {
+    [SerializeField] private UnityEvent OnStart;
+
     [SerializeField] private List<PuzzleEvent> puzzleEndEvents;
 
     [Header("Map")]
@@ -39,6 +41,10 @@ public class SceneEventsMgr : DialogueEventsMgr
         Instance = this;
     }
 
+    private void Start()
+    {
+        OnStart?.Invoke();
+    }
 
     public void generate_puzzle(int index)
     {
@@ -155,6 +161,16 @@ public class SceneEventsMgr : DialogueEventsMgr
     public void BendWorld(string newsetting)
     {
         curvedWorldController.Change(newsetting);
+    }
+    public void BendWorldImmediately(string newsetting)
+    {
+        curvedWorldController.ChangeImmediately(newsetting);
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quit Game");
+        Application.Quit();
     }
 
 }

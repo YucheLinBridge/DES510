@@ -3483,6 +3483,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8632049923978912122}
   - component: {fileID: 1926989139736761369}
+  - component: {fileID: 785359168049604277}
   m_Layer: 0
   m_Name: locomotive
   m_TagString: Untagged
@@ -3544,6 +3545,115 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &785359168049604277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6278860003734909501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abca222fefeb843b0b51bce6ca2394b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimationEvents:
+  - Name: FX_small_on
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7097227473800673100}
+          m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Name: FX_small_off
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7097227473800673100}
+          m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+          m_MethodName: Stop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Name: FX_01_on
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8978794664763108949}
+          m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Name: FX_01_off
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8978794664763108949}
+          m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+          m_MethodName: Stop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Name: FX_02_on
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8804370733004867934}
+          m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Name: FX_02_off
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8804370733004867934}
+          m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+          m_MethodName: Stop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &6370358269151381400
 GameObject:
   m_ObjectHideFlags: 0
@@ -4897,7 +5007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1014252301174022, guid: 76ef43c1bd544924b8aeb115e01163b5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4456855540096558, guid: 76ef43c1bd544924b8aeb115e01163b5, type: 3}
       propertyPath: m_LocalScale.x
@@ -4957,6 +5067,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 198919396441304136, guid: 76ef43c1bd544924b8aeb115e01163b5,
         type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198919396441304136, guid: 76ef43c1bd544924b8aeb115e01163b5,
+        type: 3}
       propertyPath: scalingMode
       value: 1
       objectReference: {fileID: 0}
@@ -4981,6 +5096,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6970691428353153796}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &7097227473800673100 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198919396441304136, guid: 76ef43c1bd544924b8aeb115e01163b5,
+    type: 3}
+  m_PrefabInstance: {fileID: 6970691428353153796}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8713865420082537140
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4995,7 +5116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1110045544307624, guid: 2d375605610a4e84d8e1d80a70c9340a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4529282608138346, guid: 2d375605610a4e84d8e1d80a70c9340a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5037,6 +5158,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 198922435788909546, guid: 2d375605610a4e84d8e1d80a70c9340a,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5045,6 +5171,12 @@ PrefabInstance:
 --- !u!4 &8718345686089099998 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4529282608138346, guid: 2d375605610a4e84d8e1d80a70c9340a,
+    type: 3}
+  m_PrefabInstance: {fileID: 8713865420082537140}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8804370733004867934 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198922435788909546, guid: 2d375605610a4e84d8e1d80a70c9340a,
     type: 3}
   m_PrefabInstance: {fileID: 8713865420082537140}
   m_PrefabAsset: {fileID: 0}
@@ -5062,7 +5194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1110045544307624, guid: 2d375605610a4e84d8e1d80a70c9340a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4529282608138346, guid: 2d375605610a4e84d8e1d80a70c9340a, type: 3}
       propertyPath: m_LocalScale.x
@@ -5114,6 +5246,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4529282608138346, guid: 2d375605610a4e84d8e1d80a70c9340a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198922435788909546, guid: 2d375605610a4e84d8e1d80a70c9340a,
+        type: 3}
+      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198922435788909546, guid: 2d375605610a4e84d8e1d80a70c9340a,
@@ -5196,6 +5333,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d375605610a4e84d8e1d80a70c9340a, type: 3}
+--- !u!198 &8978794664763108949 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198922435788909546, guid: 2d375605610a4e84d8e1d80a70c9340a,
+    type: 3}
+  m_PrefabInstance: {fileID: 9104484918857893311}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9100006351242726869 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4529282608138346, guid: 2d375605610a4e84d8e1d80a70c9340a,

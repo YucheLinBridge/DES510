@@ -959,7 +959,7 @@ Transform:
   m_GameObject: {fileID: 578262054}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.54, y: 0.2, z: -16.74}
+  m_LocalPosition: {x: 3.54, y: 0, z: -16.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1128,7 +1128,7 @@ Transform:
   m_GameObject: {fileID: 729287004}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.5, y: 0.2, z: -16.74}
+  m_LocalPosition: {x: -17.5, y: 0, z: -16.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1419,7 +1419,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: travelling_1_1
+          m_StringArgument: travelling_1
           m_BoolArgument: 0
         m_CallState: 2
   ForceAuto: 0
@@ -2544,6 +2544,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f8a0fd74c14d247ae1d01bfaaf510c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1292300885}
+        m_TargetAssemblyTypeName: SceneEventsMgr, DES510
+        m_MethodName: BendWorldImmediately
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 0,0
+          m_BoolArgument: 0
+        m_CallState: 2
   puzzleEndEvents:
   - index: 0
     OnComplete:

@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/exploration_1_1.unity
     guid: 09a10051fba346f4cb392c875397064e
   - enabled: 1
-    path: Assets/Scenes/travelling_1_1.unity
+    path: Assets/Scenes/travelling_1.unity
     guid: b556685c34eed394085aac0f1cfb82c4
   - enabled: 1
     path: Assets/Scenes/exploration_1_2.unity
