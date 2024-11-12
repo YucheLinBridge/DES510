@@ -15,8 +15,8 @@ MonoBehaviour:
   timeFadeIn: 2
   timeFadeOut: 2
   musics:
-  - {fileID: 8300000, guid: b8075a32ea7e63b49ba0e3bd1ed85c05, type: 3}
-  - {fileID: 8300000, guid: 12d59e4ad27adbb4eb2d28d47ddec3a0, type: 3}
-  - {fileID: 8300000, guid: 294c3d98ef1c25d40aad8aa94b455c60, type: 3}
-  - {fileID: 8300000, guid: acd6d072de7562441978b970a1609be7, type: 3}
-  - {fileID: 8300000, guid: d2ed96bfd84532f488b99ae711d66809, type: 3}
+  - {fileID: 8300000, guid: 36fa6f188ec1f1c4db141c42347859bd, type: 3}
+  - {fileID: 8300000, guid: 39525741e495851449ffa29f00da00ab, type: 3}
+  - {fileID: 8300000, guid: 2b15f08fad5ec7848952d94d64d8605b, type: 3}
+  - {fileID: 8300000, guid: 36a075bc7aa838a45bf36d3b9fe6e99c, type: 3}
+  - {fileID: 8300000, guid: 2878aa6d096ebd14e8dd7beecba95ec5, type: 3}

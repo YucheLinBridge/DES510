@@ -15,11 +15,11 @@ MonoBehaviour:
   SFX_prefab: {fileID: 5652728664648428773, guid: 760a4f34bcad3014987ce40f9a540c50,
     type: 3}
   SFXs:
-  - {fileID: 8300000, guid: 5e247b94c07cf8541bc976ab7aede634, type: 3}
-  - {fileID: 8300000, guid: 876ba35e54bb916468b3e49b83597b61, type: 3}
-  - {fileID: 8300000, guid: f131453d3e902fa4588573385bc40250, type: 3}
-  - {fileID: 8300000, guid: e34cffcfa7d147a4d9944ea424815cae, type: 3}
-  - {fileID: 8300000, guid: f88390054fc9c564b872a42bff5b4191, type: 3}
-  - {fileID: 8300000, guid: acee7e020d96d3143914b5b3b0cdcf2a, type: 3}
-  - {fileID: 8300000, guid: 3524617132cf81048896b77e0f7786b8, type: 3}
-  - {fileID: 8300000, guid: 61aa7e675c536944882e8a7e393639a4, type: 3}
+  - {fileID: 8300000, guid: 7de81fb35c8ff7942bd2fae999c3ad78, type: 3}
+  - {fileID: 8300000, guid: 768f81f27c5768f48b1ce243a3405ab9, type: 3}
+  - {fileID: 8300000, guid: 8aa5e53be765901469eaf5ba6be34c62, type: 3}
+  - {fileID: 8300000, guid: bb2ed6cf2c580164883fc2c98db5d58b, type: 3}
+  - {fileID: 8300000, guid: 7b11e13491c70104c82b381a8ca90f13, type: 3}
+  - {fileID: 8300000, guid: cf7b0d75d7d58d648adf5ad9d7cc63c0, type: 3}
+  - {fileID: 8300000, guid: 86b80615c735b584591da86beff79288, type: 3}
+  - {fileID: 8300000, guid: 98b408bb60f19264ebcea242cf6d758d, type: 3}
