@@ -16,6 +16,7 @@ MonoBehaviour:
   spriteWidth: 100
   spriteHeight: 100
   spacing: -1
+  rotatingTime: 0.25
   LineSprites:
   - name: E
     sprite: {fileID: 21300000, guid: e4aeff5c7a84c544a9237623f0f91187, type: 3}

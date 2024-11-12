@@ -33,7 +33,7 @@ public class GridUI : MonoBehaviour
         locked = true;
         //clockwise
         mgr.Rotate_clockwise(x, y);
-        transform.DORotate(transform.rotation.eulerAngles - Vector3.forward * 90f, .5f).OnComplete(() => {
+        transform.DORotate(transform.rotation.eulerAngles - Vector3.forward * 90f, database.ROTTIME).OnComplete(() => {
             locked = false;
         });
         sfxMgr.PlaySFX(2);

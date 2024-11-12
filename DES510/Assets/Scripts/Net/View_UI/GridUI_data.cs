@@ -8,13 +8,15 @@ public class GridUI_data : ScriptableObjectInstaller<GridUI_data>
 {
 
     public GameObject Prefab;
-    [SerializeField] private float spriteWidth, spriteHeight, spacing;
+    [SerializeField] private float spriteWidth, spriteHeight, spacing,rotatingTime;
     [SerializeField] private List<ArtData> LineSprites;
     [SerializeField] private Sprite Node, Main;
     public Color line_active, line_inactive, node_active, node_inactive;
 
     public Sprite NODE => Node;
     public Sprite MAIN => Main;
+
+    public float ROTTIME=>rotatingTime;
 
     public Sprite GetLine(string name) {
         int index = LineSprites.FindIndex(x=>x.IsName(name));
