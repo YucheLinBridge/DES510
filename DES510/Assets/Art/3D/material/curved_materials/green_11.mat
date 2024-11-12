@@ -20,9 +20,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: orange_12
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_Parent: {fileID: 2100000, guid: b5d861e3c799b264fa235c4d07ac53e8, type: 2}
+  m_Name: green_11
+  m_Shader: {fileID: -6465566751694194690, guid: 3a4aa454c4a62f744babe4b7cbcefdac,
+    type: 3}
+  m_Parent: {fileID: 2100000, guid: 0e016f476b896b643be928297dd5dab7, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -30,8 +31,7 @@ Material:
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap:
-    RenderType: Opaque
+  stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
   m_LockedProperties: 
@@ -39,9 +39,10 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _QueueControl: 0
     m_Colors:
-    - _BaseColor: {r: 1, g: 0.96094006, b: 0.81446534, a: 1}
-    - _Color: {r: 1, g: 0.96094006, b: 0.81446534, a: 1}
+    - _BaseColor: {r: 0.66354173, g: 0.76729554, b: 0.7133385, a: 1}
+    - _Color: {r: 0.66354173, g: 0.76729554, b: 0.7133385, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
