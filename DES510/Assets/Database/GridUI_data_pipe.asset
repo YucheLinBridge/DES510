@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 601b077f97c66fa488826bc302b8484b, type: 3}
-  m_Name: GridUI_data
+  m_Name: GridUI_data_pipe
   m_EditorClassIdentifier: 
   Prefab: {fileID: 6212740415676551885, guid: 4ad7660bccb93b24ab7977f28f94455e, type: 3}
   spriteWidth: 120
