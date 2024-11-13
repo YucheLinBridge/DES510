@@ -36,6 +36,9 @@ public class SceneEventsMgr : DialogueEventsMgr
     [Inject]
     private CurvedWorldController curvedWorldController;
 
+    [Inject]
+    private SettingsMgr settingsMgr;
+
     private void Awake()
     {
         Instance = this;
@@ -171,6 +174,11 @@ public class SceneEventsMgr : DialogueEventsMgr
     {
         Debug.Log("Quit Game");
         Application.Quit();
+    }
+
+    public void OpenSettingPage()
+    {
+        settingsMgr.ShowSetting();
     }
 
 }

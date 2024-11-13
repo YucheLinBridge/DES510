@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class SettingsMgr : MonoBehaviour
 {
+    [SerializeField] private GameObject settingPage;
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private Slider mainSlider, musicSlider, sfxSlider;
     [SerializeField] private float defaultVolume = .5f;
@@ -25,17 +26,20 @@ public class SettingsMgr : MonoBehaviour
 
     private void setMainVolume(float val)
     {
-        audioMixer.SetFloat(PARAM_MAIN, Mathf.Log10(val));
+        audioMixer.SetFloat(PARAM_MAIN, Mathf.Log10(val)*20);
+        PlayerPrefs.SetFloat(PARAM_MAIN, val);
     }
 
     private void setMusicVolume(float val)
     {
-        audioMixer.SetFloat (PARAM_MUSIC, Mathf.Log10(val));
+        audioMixer.SetFloat (PARAM_MUSIC, Mathf.Log10(val) * 20);
+        PlayerPrefs.SetFloat(PARAM_MUSIC, val);
     }
 
     private void setSFXVolume(float val)
     {
-        audioMixer.SetFloat(PARAM_SFX, Mathf.Log10(val));
+        audioMixer.SetFloat(PARAM_SFX, Mathf.Log10(val) * 20);
+        PlayerPrefs.SetFloat(PARAM_SFX, val);
     }
 
     private void refesh()
@@ -43,6 +47,7 @@ public class SettingsMgr : MonoBehaviour
         if (!PlayerPrefs.HasKey(PARAM_MAIN))
         {
             PlayerPrefs.SetFloat(PARAM_MAIN, defaultVolume);
+            mainSlider.value = defaultVolume;
         }
         else
         {
@@ -68,5 +73,15 @@ public class SettingsMgr : MonoBehaviour
         {
             sfxSlider.value = PlayerPrefs.GetFloat(PARAM_SFX);
         }
+    }
+
+    public void ShowSetting()
+    {
+        settingPage.SetActive(true);
+    }
+
+    public void HideSetting()
+    {
+        settingPage.SetActive(false);
     }
 }

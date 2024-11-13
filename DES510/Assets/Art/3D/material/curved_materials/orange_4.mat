@@ -27,8 +27,8 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _Backwards_Strength: -0.16997765
-    - _Sideways_Strength: -0.1999737
+    - _Backwards_Strength: -0.17
+    - _Sideways_Strength: -0.2
     m_Colors:
     - _BaseColor: {r: 1, g: 0.73488384, b: 0.58805025, a: 1}
     - _Color: {r: 1, g: 0.73488384, b: 0.58805025, a: 1}
