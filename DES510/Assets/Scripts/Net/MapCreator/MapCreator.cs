@@ -1,7 +1,5 @@
 using Net;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.Plastic.Newtonsoft.Json.Linq;
 using UnityEngine;
 using Zenject;
 
@@ -90,7 +88,9 @@ public class MapCreator : MonoBehaviour
                 //Debug.Log($"({j},{i})");
             }
         }
+#if UNITY_EDITOR
         data.Save();
+#endif
     }
 
 

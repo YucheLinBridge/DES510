@@ -1,10 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using Zenject;
 
-namespace Net {
+namespace Net
+{
     [CreateAssetMenu(fileName = "Grid3D_data", menuName = "Installers/Net MapData")]
     public class Data : ScriptableObjectInstaller<Data>
     {
@@ -26,11 +26,14 @@ namespace Net {
             Container.BindInstance(this);
         }
 
+
+# if UNITY_EDITOR
         public void Save()
         {
             EditorUtility.SetDirty(this);
             AssetDatabase.SaveAssets();
         }
+#endif
     }
 
     [System.Serializable]

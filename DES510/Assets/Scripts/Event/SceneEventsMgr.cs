@@ -1,11 +1,9 @@
-using Codice.Client.Common.GameUI;
-using System;
+using Coroutine_Zenject;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using Zenject;
-using Coroutine_Zenject;
 
 public class SceneEventsMgr : DialogueEventsMgr
 {

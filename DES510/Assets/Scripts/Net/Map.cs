@@ -1,12 +1,9 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Net {
+namespace Net
+{
     public class Map
     {
         private Grid[][] grids;
