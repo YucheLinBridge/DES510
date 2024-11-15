@@ -1587,18 +1587,6 @@ MonoBehaviour:
   - {fileID: 1055605539}
   - {fileID: 995505569}
   defaultCamera: 0
---- !u!114 &873996575 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7105525997083243200, guid: 74c1cd278a6495d488515cc4f5437b59,
-    type: 3}
-  m_PrefabInstance: {fileID: 1778187058571519643}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28569c2c36507934a8b5a4292608e76a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &882223545
 GameObject:
   m_ObjectHideFlags: 0
@@ -3186,31 +3174,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Keyevents:
-  - Name: F1-ShowGame
+  - Name: F1-ChangeCamera
     key: 282
     Down:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1292300885}
-          m_TargetAssemblyTypeName: SceneEventsMgr, DES510
-          m_MethodName: generate_puzzle
+        - m_Target: {fileID: 870160713}
+          m_TargetAssemblyTypeName: CamerasMgr, DES510
+          m_MethodName: ChangeCamera
           m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 873996575}
-          m_TargetAssemblyTypeName: MonoEventUI, DES510
-          m_MethodName: ShowGame
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
+            m_IntArgument: 3
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
@@ -3234,7 +3210,7 @@ PrefabInstance:
     - target: {fileID: 5271582635921400832, guid: b7c213c9461704e41bbe8c7182c0e5cb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.04
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5271582635921400832, guid: b7c213c9461704e41bbe8c7182c0e5cb,
         type: 3}
