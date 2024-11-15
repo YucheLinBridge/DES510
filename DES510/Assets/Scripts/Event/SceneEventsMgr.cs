@@ -179,6 +179,8 @@ public class SceneEventsMgr : DialogueEventsMgr
         settingsMgr.ShowSetting();
     }
 
+
+
 }
 
 [System.Serializable]
