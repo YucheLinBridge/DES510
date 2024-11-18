@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
+using Zenject;
 
 public class WalkToPoint : MonoBehaviour
 {
@@ -12,18 +13,36 @@ public class WalkToPoint : MonoBehaviour
     private Vector3 des;
     private bool enable=true;
 
+    [Inject(Optional =true)]
+    private FX_WalkTarget_mono.Factory fx_factory;
+
+    private FX_WalkTarget_mono fx_target;
+
    public void Walk(Vector3 des)
    {
         if (!enable)
         {
             return;
+        }else if (moving &&fx_target!=null)
+        {
+            fx_target.Stop();
         }
+
+
         OnArrived.RemoveAllListeners();
         agent.SetDestination(des);
         this.des=des;
         this.des.y = transform.position.y;
         //Debug.Log($"{name} walk to {des}");
         moving = true;
+
+
+        if (fx_factory!=null)
+        {
+            fx_target = fx_factory.Create();
+            fx_target.POS = des;
+        }
+        
    }
 
     private void Update()
@@ -37,6 +56,11 @@ public class WalkToPoint : MonoBehaviour
                 OnArrived?.Invoke();
                 OnArrived.RemoveAllListeners();
                 //agent.enabled = true;
+
+                if (fx_target!=null)
+                {
+                    fx_target.Stop();
+                }
             }
         }
     }

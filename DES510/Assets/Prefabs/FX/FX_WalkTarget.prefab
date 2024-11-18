@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 4979504664547992}
   - component: {fileID: 198701760564810788}
   - component: {fileID: 199399080188324566}
+  - component: {fileID: 764212053263762006}
   m_Layer: 0
-  m_Name: Swirl
+  m_Name: FX_WalkTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,8 +29,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4614955065871232}
   m_Father: {fileID: 0}
@@ -43,8 +44,8 @@ ParticleSystem:
   m_GameObject: {fileID: 1002530091286178}
   serializedVersion: 8
   lengthInSec: 1.2
-  simulationSpeed: 1
-  stopAction: 0
+  simulationSpeed: 2
+  stopAction: 3
   cullingMode: 1
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
@@ -109,7 +110,7 @@ ParticleSystem:
       m_RotationOrder: 4
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
-  scalingMode: 1
+  scalingMode: 0
   randomSeed: 0
   InitialModule:
     serializedVersion: 3
@@ -118,7 +119,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 1
-      minScalar: 0.5
+      minScalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -871,7 +872,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 6
+      scalar: 10
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -4903,6 +4904,19 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &764212053263762006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002530091286178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb456af875977854c949460a65e13d81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particle: {fileID: 198701760564810788}
 --- !u!1 &1177126736701760
 GameObject:
   m_ObjectHideFlags: 0
