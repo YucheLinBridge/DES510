@@ -110,7 +110,7 @@ Material:
     - _Metallic: 0
     - _Noise_Strength: 50
     - _OcclusionStrength: 1
-    - _Outline_Thickness: 0
+    - _Outline_Thickness: 0.27438566
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
