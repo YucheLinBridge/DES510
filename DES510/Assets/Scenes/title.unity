@@ -299,7 +299,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 228592951}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00016987484, y: -0.77160394, z: -0.0002059812, w: 0.6361032}
+  m_LocalRotation: {x: -0.00016994067, y: -0.77160394, z: -0.00020604703, w: 0.6361032}
   m_LocalPosition: {x: 0.8700001, y: 4.3, z: -11.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1522,6 +1522,7 @@ GameObject:
   - component: {fileID: 755571095}
   - component: {fileID: 755571094}
   - component: {fileID: 755571097}
+  - component: {fileID: 755571098}
   m_Layer: 0
   m_Name: Btn_Load
   m_TagString: Untagged
@@ -1588,11 +1589,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 755571095}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 540129057}
+        m_TargetAssemblyTypeName: SceneEventsMgr, DES510
+        m_MethodName: LoadGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &755571095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1653,6 +1666,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &755571098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755571092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b66e7e45c17b1534d89cc8e2eccdc904, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btnLoad: {fileID: 755571094}
 --- !u!1 &848309685
 GameObject:
   m_ObjectHideFlags: 0
@@ -1833,8 +1859,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4288651167
-  m_fontColor: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2034,7 +2060,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961739749}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00016969074, y: -0.77160394, z: -0.00020579898, w: 0.6361032}
+  m_LocalRotation: {x: -0.00016972345, y: -0.77160394, z: -0.00020583169, w: 0.6361032}
   m_LocalPosition: {x: 0.8700001, y: 4.3, z: -11.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
