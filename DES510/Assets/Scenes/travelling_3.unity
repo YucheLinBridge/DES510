@@ -463,7 +463,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 341312669}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00016972239, y: -0.77160394, z: -0.00020582875, w: 0.6361032}
+  m_LocalRotation: {x: -0.00016972247, y: -0.77160394, z: -0.00020582882, w: 0.6361032}
   m_LocalPosition: {x: 0.8700001, y: 4.3, z: -11.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2116,6 +2116,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: SceneEventsMgr, DES510
         m_MethodName: SaveGame
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1292300885}
+        m_TargetAssemblyTypeName: SceneEventsMgr, DES510
+        m_MethodName: ShowPauseMenu
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

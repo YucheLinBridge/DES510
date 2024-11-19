@@ -2092,6 +2092,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas_Puzzle_1
       objectReference: {fileID: 0}
+    - target: {fileID: 1444799791917767366, guid: 74c1cd278a6495d488515cc4f5437b59,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1444799791917767366, guid: 74c1cd278a6495d488515cc4f5437b59,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 900
+      objectReference: {fileID: 0}
     - target: {fileID: 3312051273651475582, guid: 74c1cd278a6495d488515cc4f5437b59,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2201,16 +2211,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5861077083380327302, guid: 74c1cd278a6495d488515cc4f5437b59,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1100
-      objectReference: {fileID: 0}
-    - target: {fileID: 5861077083380327302, guid: 74c1cd278a6495d488515cc4f5437b59,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 900
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9908,6 +9908,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1292300885}
+        m_TargetAssemblyTypeName: SceneEventsMgr, DES510
+        m_MethodName: BendWorldImmediately
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 0,0
+          m_BoolArgument: 0
+        m_CallState: 2
   puzzleEndEvents:
   - index: 2
     OnComplete:
@@ -12164,7 +12176,7 @@ PrefabInstance:
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: a13e0575776cfe94d924e375335762c8, type: 2}
+      objectReference: {fileID: 2100000, guid: 7ac6b31118305b846a103d75beb9e5df, type: 2}
     - target: {fileID: 3251619395992721080, guid: 6f9fc299733da7e44992b9391aa20e16,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -12174,7 +12186,7 @@ PrefabInstance:
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: a13e0575776cfe94d924e375335762c8, type: 2}
+      objectReference: {fileID: 2100000, guid: 7ac6b31118305b846a103d75beb9e5df, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
