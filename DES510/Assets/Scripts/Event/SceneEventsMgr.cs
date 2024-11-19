@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using Zenject;
 
 public class SceneEventsMgr : DialogueEventsMgr
@@ -36,6 +37,9 @@ public class SceneEventsMgr : DialogueEventsMgr
 
     [Inject]
     private SettingsMgr settingsMgr;
+
+    [Inject]
+    private SimpleSaveMgr simpleSaveMgr;
 
     private void Awake()
     {
@@ -179,7 +183,35 @@ public class SceneEventsMgr : DialogueEventsMgr
         settingsMgr.ShowSetting();
     }
 
+    public void ShowPauseMenu(bool flag)
+    {
+        if (flag)
+        {
+            settingsMgr.ShowPauseMenu();
+        }
+        else
+        {
+            settingsMgr.HidePauseMenu();
+        }
+    }
 
+    public void LoadGame()
+    {
+        var target=simpleSaveMgr.Load();
+        if (target!=null)
+        {
+            SceneManager.LoadScene(target);
+        }
+        else
+        {
+            Debug.LogError("There is no save!");
+        }
+    }
+
+    public void SaveGame()
+    {
+        simpleSaveMgr.Save(SceneManager.GetActiveScene().name);
+    }
 
 }
 

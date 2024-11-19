@@ -2654,6 +2654,18 @@ MonoBehaviour:
           m_StringArgument: 0,0
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1292300885}
+        m_TargetAssemblyTypeName: SceneEventsMgr, DES510
+        m_MethodName: SaveGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 0,0
+          m_BoolArgument: 0
+        m_CallState: 2
   puzzleEndEvents:
   - index: 0
     OnComplete:
@@ -2971,6 +2983,7 @@ GameObject:
   - component: {fileID: 1536270152}
   - component: {fileID: 1536270151}
   - component: {fileID: 1536270153}
+  - component: {fileID: 1536270154}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -2995,6 +3008,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d31d5a8ed5342a84d92e7a0b3a3a0891, type: 2}
   _monoInstallers:
   - {fileID: 1536270153}
+  - {fileID: 1536270154}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -3039,6 +3053,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dccbbca9609f56418fc84314017b947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1536270154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536270150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddcab241cfee0054183487ea235ef5f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FXParent: {fileID: 1838864503}
+  WalkTargetFX: {fileID: 1002530091286178, guid: efafce760377f664f842cd98d70a24b0,
+    type: 3}
 --- !u!1 &1607254843
 GameObject:
   m_ObjectHideFlags: 0
@@ -3403,6 +3432,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1838864502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1838864503}
+  m_Layer: 0
+  m_Name: ===FX===
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1838864503
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838864502}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1903864378
 GameObject:
   m_ObjectHideFlags: 0
@@ -3608,7 +3668,19 @@ MonoBehaviour:
   FadeInEase: 3
   OnFadeIn:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1292300885}
+        m_TargetAssemblyTypeName: SceneEventsMgr, DES510
+        m_MethodName: ShowPauseMenu
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   FadeOutTime: 2
   FadeOutAlpha_start: 0
   FadeOutAlpha_end: 1
@@ -3742,6 +3814,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1444799791917767366, guid: 74c1cd278a6495d488515cc4f5437b59,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 640
+      objectReference: {fileID: 0}
+    - target: {fileID: 1444799791917767366, guid: 74c1cd278a6495d488515cc4f5437b59,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 900
+      objectReference: {fileID: 0}
     - target: {fileID: 3312051273651475582, guid: 74c1cd278a6495d488515cc4f5437b59,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3847,15 +3929,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5861077083380327302, guid: 74c1cd278a6495d488515cc4f5437b59,
+    - target: {fileID: 5379229135987461031, guid: 74c1cd278a6495d488515cc4f5437b59,
         type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 640
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5861077083380327302, guid: 74c1cd278a6495d488515cc4f5437b59,
+    - target: {fileID: 5379229135987461031, guid: 74c1cd278a6495d488515cc4f5437b59,
         type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 900
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8754706369196627872, guid: 74c1cd278a6495d488515cc4f5437b59,
         type: 3}
@@ -4030,3 +4112,4 @@ SceneRoots:
   - {fileID: 62337762}
   - {fileID: 1209956246}
   - {fileID: 1092594891}
+  - {fileID: 1838864503}
