@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class SettingsMgr : MonoBehaviour
 {
+    [Header("Pause Menu")]
+    [SerializeField] private GameObject Cnavas_PauseMenu;
+
+    [Header("Setting Menu")]
     [SerializeField] private GameObject settingPage;
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private Slider mainSlider, musicSlider, sfxSlider;
@@ -83,5 +87,16 @@ public class SettingsMgr : MonoBehaviour
     public void HideSetting()
     {
         settingPage.SetActive(false);
+    }
+
+    public void ShowPauseMenu()
+    {
+        Cnavas_PauseMenu.SetActive(true);
+    }
+
+    public void HidePauseMenu()
+    {
+        Cnavas_PauseMenu.SetActive(false);
+
     }
 }

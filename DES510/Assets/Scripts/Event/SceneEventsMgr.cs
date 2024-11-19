@@ -179,7 +179,17 @@ public class SceneEventsMgr : DialogueEventsMgr
         settingsMgr.ShowSetting();
     }
 
-
+    public void ShowPauseMenu(bool flag)
+    {
+        if (flag)
+        {
+            settingsMgr.ShowPauseMenu();
+        }
+        else
+        {
+            settingsMgr.HidePauseMenu();
+        }
+    }
 
 }
 
