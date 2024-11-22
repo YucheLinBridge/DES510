@@ -1277,7 +1277,7 @@ MonoBehaviour:
   spacing: 12.3
   start_pending: 20
   end_pending: 0
-  trackPrefab: {fileID: 6514967385302851826, guid: 869b40a558416024189fdd7245dbea64,
+  trackPrefab: {fileID: 6514967385302851826, guid: 5f1e44e5882857f479506577fab4168f,
     type: 3}
   track_direction: 1
   blocks:
