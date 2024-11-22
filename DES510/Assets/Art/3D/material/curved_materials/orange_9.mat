@@ -40,8 +40,8 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _Backwards_Strength: -0.17
-    - _Sideways_Strength: -0.2
+    - _Backwards_Strength: -0.16988614
+    - _Sideways_Strength: -0.19986604
     m_Colors:
     - _BaseColor: {r: 1, g: 0.8011175, b: 0.75786155, a: 1}
     - _Color: {r: 1, g: 0.8011175, b: 0.75786155, a: 1}

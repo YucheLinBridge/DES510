@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: fe1267dc085391642962cfa33e5e906a, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: bd3af1c7cc9f9a4499fc89d36d8cabce, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -1418,7 +1418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prefab_BridEffect: {fileID: 3382331792229046568, guid: f3895b00a27352944a1260398595f4dd,
     type: 3}
-  Interval: 10
+  Interval: 20
   IntervalRange: 3
   SpawnPoint: {fileID: 7277070253457672194}
 --- !u!1 &642758662
@@ -2111,7 +2111,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961739749}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000171856, y: -0.77160394, z: -0.00020796423, w: 0.6361032}
+  m_LocalRotation: {x: -0.00017185883, y: -0.77160394, z: -0.00020796707, w: 0.6361032}
   m_LocalPosition: {x: 0.8700001, y: 4.3, z: -11.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
