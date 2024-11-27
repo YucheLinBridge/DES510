@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: water
-  m_Shader: {fileID: -6465566751694194690, guid: 3a4aa454c4a62f744babe4b7cbcefdac,
+  m_Shader: {fileID: -6465566751694194690, guid: f27c7e4cc6269f34ba77a9d495fbda64,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -21,7 +21,7 @@ Material:
   stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
-  m_LockedProperties: 
+  m_LockedProperties: _SplashStrenghth
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -57,12 +57,24 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: ba1a9185e272d26469abd777bc7cacff, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RefrectionNormal:
+        m_Texture: {fileID: 2800000, guid: e61ba62c65eb08947a3c4eaed527bf7e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SkyTexture:
+        m_Texture: {fileID: 2800000, guid: c0f94ab2f802c0f40872fe512a6f6c61, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -84,9 +96,10 @@ Material:
     m_Ints: []
     m_Floats:
     - _AddPrecomputedVelocity: 0
+    - _Alpha: 0
     - _AlphaClip: 0
     - _AlphaToMask: 0
-    - _Backwards_Strength: -0.16988614
+    - _Backwards_Strength: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -96,36 +109,63 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _DstBlendAlpha: 0
+    - _Distance: 0.19
+    - _DstBlend: 10
+    - _DstBlendAlpha: 10
     - _EnvironmentReflections: 1
+    - _FoamAmount: 0.33
+    - _FoamCutoff: 1.24
+    - _FoamScale: 30
+    - _FoamSpeed: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _HeightFrequency: 0
+    - _LightStrength: 0
     - _Metalic: 0
-    - _Metallic: 0
+    - _Metallic: 0.096
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Sideways_Strength: -0.19986604
-    - _Smoothness: 0.5
+    - _RefrectionSpeed: 5
+    - _RefrectionStrength: -2.5
+    - _Ripple: 100
+    - _Sideways_Strength: 0
+    - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _SplashStrenghth: 3.59
+    - _SplashThickness: 0.45
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Straight_Dis: 0
-    - _Surface: 0
+    - _Surface: 1
     - _Tile_Strength: 0
+    - _Transparency: 2000
+    - _TransparentDepth: 0.2
+    - _TransparentRange: 0.032
+    - _TransparentStrength: 1.1
+    - _WaveAmptitude: 0
+    - _WaveSpeed: 0
+    - _WaveStrength: 0.463
     - _WorkflowMode: 1
-    - _ZWrite: 1
+    - _ZWrite: 0
     m_Colors:
     - _BaseColor: {r: 0.47339892, g: 0.76616824, b: 0.8050314, a: 1}
     - _BloomColor: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0.47339886, g: 0.76616824, b: 0.8050313, a: 1}
+    - _Color: {r: 0.2460395, g: 0.6542243, b: 0.9150943, a: 1}
+    - _Color_2: {r: 0.21960784, g: 0.64705884, b: 0.92941177, a: 1}
+    - _Color_Far: {r: 0.21960784, g: 0.64705884, b: 0.92941177, a: 1}
+    - _DeepColor: {r: 0.05882348, g: 0.5080407, b: 0.74509805, a: 0.8784314}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
+    - _LightColor: {r: 0.8396226, g: 0.8396226, b: 0.8396226, a: 1}
+    - _RefrectionScale: {r: 1, g: 1, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _SplashColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SurfaceColor: {r: 0.5373352, g: 0.99056596, b: 0.878871, a: 0.9019608}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &4768551858770403920
