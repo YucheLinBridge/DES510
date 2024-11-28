@@ -75,7 +75,6 @@ public class WalkToPoint : MonoBehaviour
     public void SetEnable(bool flag) {
         enable = flag;
         agent.enabled = flag;
-        Debug.Log($"Enable:{enable}");
     }
 
 
